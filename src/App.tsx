@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import confetti from 'canvas-confetti';
+import { Analytics } from '@vercel/analytics/react';
 import { FRAMEWORKS } from './constants';
 import { AppView, Framework } from './types';
 
@@ -1261,6 +1262,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
