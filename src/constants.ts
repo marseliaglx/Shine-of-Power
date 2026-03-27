@@ -7,7 +7,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Think about how to fail, then avoid those things.",
     category: "Clear Thinking",
     concept: "Originating from Stoic philosophy and popularized by Charlie Munger, Inversion is the practice of approaching a problem from the opposite end. Instead of asking how to achieve success, you ask how to guarantee failure. This bypasses optimism bias and forces you to confront the obstacles you would otherwise avoid. It is a form of risk management before you even define the project.",
-    reality: "For a knowledge management initiative, asking 'How do we ensure no one ever uses this?' yields concrete insights: Make the search useless. Require three logins. Fill it with outdated content. This creates a 'stop-doing' list that is more valuable than a 'start-doing' list.",
+    reality: "For a knowledge management initiative, asking 'How do we ensure no one ever uses this?' yields concrete insights:\n\n1. Make the search useless by cluttering it with noise.\n2. Require three separate logins to access a single document.\n3. Fill the repository with outdated, unverified content.\n\nBy avoiding these pitfalls, you create a 'stop-doing' list that is often more valuable than a 'start-doing' list, ensuring your system remains lean and user-centric.",
     quiz: {
       question: "You want to improve the onboarding experience for new hires. What is the inversion approach?",
       options: [
@@ -26,7 +26,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Consider the consequences of the consequences.",
     category: "Clear Thinking",
     concept: "Rooted in systems thinking and popularized by Howard Marks, Second-Order Thinking is the ability to visualize the chain reaction of a decision over time. First-order thinking is simplistic and obvious ('We need to cut costs'). Second-order thinking is complex and powerful ('If we cut this cost, what will happen to the teams that depend on it, and then what will the impact be on our customers?').",
-    reality: "A company decides to 'democratize content creation' (First-order: more content!). Second-order: Every employee publishes unvetted content. Third-order: Customers find conflicting information and lose trust. Fourth-order: The KM team is overwhelmed cleaning up the mess.",
+    reality: "A company decides to 'democratize content creation' (First-order: more content!). \n\nSecond-order: Every employee publishes unvetted content, leading to a massive volume of low-quality data.\nThird-order: Customers find conflicting information, get frustrated, and lose trust in the brand.\nFourth-order: The KM team is overwhelmed cleaning up the mess, and the cost of maintenance far exceeds the original benefit of 'more content'.",
     quiz: {
       question: "Your company cuts the training budget to save money. A second‑order effect might be:",
       options: [
@@ -45,7 +45,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Don't mistake the model for reality.",
     category: "Clear Thinking",
     concept: "Introduced by Alfred Korzybski, this framework reminds us that any abstraction—an org chart, a dashboard, a project plan—is a simplification. It is a model that omits reality's messiness and nuance. The error is not in using maps; it's in mistaking the map for the territory. Great leaders go to the 'territory' to recalibrate their maps.",
-    reality: "A 'Velocity' chart in Agile is a map. A team fixated on it might inflate story points to maintain a line on a graph. The real territory is sustainable delivery and quality—none of which are captured in a single velocity metric.",
+    reality: "A 'Velocity' chart in Agile is a map, not the actual work. A team fixated on it might inflate story points to maintain a perfect line on a graph, creating an illusion of productivity.\n\nThe real territory is sustainable delivery, code quality, and customer value—none of which are captured in a single velocity metric. Great leaders go to the 'territory' (the daily stand-ups and code reviews) to recalibrate their maps.",
     quiz: {
       question: "Your dashboard shows 98% knowledge base satisfaction. To test if this matches reality, you should:",
       options: [
@@ -64,7 +64,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Assume mistakes over malice.",
     category: "Clear Thinking",
     concept: "Hanlon’s Razor is a cognitive step: 'What else could explain this?' It suggests that we should never attribute to malice that which is adequately explained by neglect, incompetence, or simple mistakes. It is the antidote to the fundamental attribution error, where we over-attribute others' actions to their character.",
-    reality: "Your manager rejects your proposal without detailed feedback. Instead of thinking 'They don't trust me,' consider they might be stressed, read it quickly between meetings, or simply didn't understand the key benefit.",
+    reality: "Your manager rejects your proposal without detailed feedback. Instead of thinking 'They don't trust me' (malice), consider they might be stressed, read it quickly between meetings, or simply didn't understand the key benefit (neglect/incompetence).\n\nBy assuming the latter, you can approach them with a helpful follow-up: 'I noticed you had some concerns—would a 5-minute walkthrough of the core benefits help clarify things?'",
     quiz: {
       question: "A stakeholder missed a deadline that affects your work. Hanlon’s Razor suggests you first consider:",
       options: [
@@ -83,7 +83,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Don't take things personally.",
     category: "Clear Thinking",
     concept: "From the ancient Taoist philosopher Zhuangzi, The Empty Boat is an emotional regulation practice. If a boat hits yours and it's empty, you aren't angry. If there's a person in it, you shout. The boat is the same; your reaction changes based on your perception of intent. It teaches that others' reactions are a reflection of their state, not a judgment of you.",
-    reality: "When someone is rude in a meeting, imagine their 'boat' is empty—perhaps they are dealing with a personal crisis or are just overwhelmed. Your next step shifts from defensive justification to a collaborative inquiry.",
+    reality: "When someone is rude in a meeting, imagine their 'boat' is empty—perhaps they are dealing with a personal crisis, a lack of sleep, or are just overwhelmed by their own deadlines.\n\nYour next step shifts from defensive justification to a collaborative inquiry. You might say, 'It seems like we're under a lot of pressure right now. How can we simplify this decision?'",
     quiz: {
       question: "You receive a curt email from a colleague. Applying the Empty Boat parable, you would:",
       options: [
@@ -102,7 +102,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Beware of perverse incentives.",
     category: "Clear Thinking",
     concept: "The Cobra Effect is a dramatic manifestation of perverse incentives. A seemingly logical solution backfires because it fails to account for human behavior within the incentive structure. It occurs when an incentive for a specific problem actually makes the problem worse.",
-    reality: "In colonial India, a bounty was placed on cobra skins to reduce the population. People started breeding cobras to collect the bounty. When the bounty was cancelled, breeders released the cobras, making the population higher than before.",
+    reality: "In colonial India, a bounty was placed on cobra skins to reduce the population. People started breeding cobras to collect the bounty. When the bounty was cancelled, breeders released the cobras, making the population higher than before.\n\nIn modern business, rewarding developers solely for 'lines of code' leads to bloated, unmaintainable software. The incentive for 'productivity' actually creates 'technical debt'.",
     quiz: {
       question: "A call center rewards agents for the highest number of calls handled per hour. What unintended consequence is likely?",
       options: [
@@ -121,7 +121,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "When a measure becomes a target, it ceases to be a good measure.",
     category: "Clear Thinking",
     concept: "Goodhart’s Law explains why metrics fail: they cease to be good measures when targeted. People will optimize for the metric itself, often at the expense of the actual goal. The solution is to use a balanced scorecard of metrics that are hard to game simultaneously.",
-    reality: "A company wants to reduce 'time-to-hire'. Recruiters start filling roles with the first minimally viable candidate. Quality drops and attrition increases. A better system measures 'time-to-hire' alongside '6-month retention rate'.",
+    reality: "A company wants to reduce 'time-to-hire'. Recruiters start filling roles with the first minimally viable candidate to hit their target. Quality drops and attrition increases.\n\nA better system measures 'time-to-hire' alongside '6-month retention rate' and 'hiring manager satisfaction'. This prevents the measure from becoming a target that destroys the actual mission of finding great talent.",
     quiz: {
       question: "A content team is measured solely on “articles published per week.” What is the most likely outcome?",
       options: [
@@ -140,7 +140,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Track decisions, reasoning, and outcomes.",
     category: "Decision Making",
     concept: "A cornerstone of Daniel Kahneman's work, the Decision Journal is a calibration tool for your judgment. By recording your decision-making process before you know the outcome, you defeat 'hindsight bias.' It helps you identify patterns: Are you overconfident when tired? Do you underestimate complexity in Q4?",
-    reality: "Entry: 'Confidence 80%. Reason: Standard taxonomy will improve findability. Risks: Migration effort is underestimated.' Post-Mortem: Migration was a nightmare. You see your diagnosis was correct, but your risk assessment was wrong. Your learning is 'my risk estimates are systematically too optimistic.'",
+    reality: "Entry: 'Confidence 80%. Reason: Standard taxonomy will improve findability. Risks: Migration effort is underestimated.' \n\nPost-Mortem: Migration was a nightmare. You see your diagnosis was correct, but your risk assessment was wrong. Your learning is 'my risk estimates are systematically too optimistic.' This insight allows you to add a 20% 'buffer' to all future project estimates.",
     quiz: {
       question: "After a project that took longer than expected but succeeded, your decision journal would help you:",
       options: [
@@ -159,7 +159,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Define worst fears, prevention, and recovery plans.",
     category: "Decision Making",
     concept: "Popularized by Tim Ferriss, Fear-Setting is a structured exercise in risk analysis. It forces you to define the vague, terrifying specter of a decision into concrete, manageable problems. It reveals that the cost of inaction is often higher and more certain than the cost of failure.",
-    reality: "Asking for a promotion. Define: 'They say no, I look foolish.' Prevent: 'Build a business case with data.' Repair: 'Ask for feedback on the gap, create a 6-month plan.' Cost of Inaction: 'Resentment, stagnant skills, and a year of missed salary.'",
+    reality: "Asking for a promotion. \n\nDefine: 'They say no, I look foolish.' \nPrevent: 'Build a business case with data and testimonials.' \nRepair: 'Ask for feedback on the gap, create a 6-month growth plan.' \nCost of Inaction: 'Resentment, stagnant skills, and a year of missed salary.' \n\nUsually, the cost of inaction is far higher than the risk of a temporary 'no'.",
     quiz: {
       question: "You are considering asking for a promotion. According to fear‑setting, after defining worst‑case scenarios, you should:",
       options: [
@@ -178,7 +178,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Imagine the project failed. Write down what went wrong.",
     category: "Decision Making",
     concept: "A pre-mortem legitimizes dissent. By asking a team to 'look into the future and write the history of this failure,' you give people permission to voice concerns they might have suppressed. It transforms anxiety into a productive diagnostic tool.",
-    reality: "For a 'Global SharePoint Migration.' Pre-mortem: 'We failed because we told everyone it would be the same but better. When it wasn't, trust was broken.' Outcome: The focus shifts to 'How do we handle the delta between the same and the better?'",
+    reality: "For a 'Global SharePoint Migration.' \n\nPre-mortem: 'We failed because we told everyone it would be the same but better. When it wasn't, trust was broken.' \n\nOutcome: The focus shifts to 'How do we handle the delta between the same and the better?' You decide to launch with a 'Beta' label and a dedicated feedback channel to manage expectations.",
     quiz: {
       question: "Your team is about to launch a new portal. A pre‑mortem asks:",
       options: [
@@ -197,7 +197,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Ask 'why?' five times to reach the root cause.",
     category: "Decision Making",
     concept: "Developed by Taiichi Ohno at Toyota, this is a disciplined technique for root cause analysis. The goal is to move from a symptom (the problem) to a process failure (the root cause). The fifth 'why' often reveals a broken process or an organizational design flaw.",
-    reality: "Problem: Wrong article went live. Why? Writer used outdated draft. Why? Folder structure is a mess. Why? No one owned the IA for 18 months. Why? KM role was vacant. Why? KM seen as 'nice-to-have'. Solution: Backfill KM role with a clear mandate.",
+    reality: "Problem: The wrong article went live on the portal.\n\nWhy? The writer used an outdated draft.\nWhy? The folder structure is a mess and confusing.\nWhy? No one has owned the Information Architecture for 18 months.\nWhy? The Knowledge Manager role has been vacant.\nWhy? KM was seen as a 'nice-to-have' rather than a core business function.\n\nSolution: Instead of just scolding the writer, the business backfills the KM role with a clear mandate to fix the architecture.",
     quiz: {
       question: "A customer received an outdated article. The fifth “why” reveals that no process links product releases to content updates. This suggests the root cause is:",
       options: [
@@ -216,7 +216,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "One problem, three solutions, one recommendation.",
     category: "Decision Making",
     concept: "The 3-1-1 method formalizes the best practice of never bringing a problem without a solution. You present a curated set of choices, becoming a decision-enabler for your stakeholders. The 'one recommendation' signals you have a considered point of view.",
-    reality: "Problem: AI tool is hallucinating. Solution A: Mandatory human-fact-checking. Solution B: Switch to new vendor. Solution C: Implement prompt-engineering guardrails. Recommendation: Start with Solution C, as it balances speed, cost, and risk.",
+    reality: "Problem: The new AI tool is hallucinating and providing incorrect answers.\n\nSolution A: Implement mandatory human-fact-checking for every response.\nSolution B: Switch to a more expensive, enterprise-grade vendor.\nSolution C: Implement prompt-engineering guardrails and a feedback loop.\n\nRecommendation: Start with Solution C, as it balances speed, cost, and risk while allowing us to gather data on common failure modes.",
     quiz: {
       question: "You discover a critical software tool will be discontinued in 60 days. Using 3‑1‑1, you should present:",
       options: [
@@ -235,7 +235,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Driver, Approver, Contributors, Informed. Clarify who decides.",
     category: "Decision Making",
     concept: "DACI is a RACI matrix for a single decision. Its power lies in the singularity of the Approver. In the absence of a single accountable person, the path of least resistance wins. By naming a Driver, you ensure someone is responsible for moving the process forward.",
-    reality: "Deciding on a new PM tool. D (Driver): PMO Lead. A (Approver): Head of Engineering (One person, final call). C (Contributors): Senior dev, senior ops, team lead. I (Informed): Entire engineering org.",
+    reality: "Deciding on a new Project Management tool for the entire department.\n\nD (Driver): PMO Lead (manages the evaluation process).\nA (Approver): Head of Engineering (the single person who makes the final call).\nC (Contributors): Senior Developers, Team Leads, and Ops (provide technical input).\nI (Informed): The entire engineering organization (notified once the decision is made).\n\nThis prevents 'decision by committee' where no one is truly accountable.",
     quiz: {
       question: "Your intranet redesign is stalled because six people think they have veto power. To resolve this, you need to assign:",
       options: [
@@ -254,7 +254,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Most decisions are reversible. Decide fast, learn, adjust.",
     category: "Decision Making",
     concept: "Popularized by Jeff Bezos, this framework distinguishes between Type 1 (irreversible) and Type 2 (reversible) decisions. Most decisions are reversible; for these, speed is more valuable than perfection. For Type 1 decisions, slow down and be meticulous.",
-    reality: "Type 2: Which logo variant to use for the new portal? Pick one. If it doesn't resonate, change it. Type 1: Restructuring your team from a centralized to a federated model. This requires months of consultation and planning.",
+    reality: "Type 2 (Reversible): Which logo variant to use for the new internal portal? Pick one and launch. If it doesn't resonate with users, you can change it in an hour.\n\nType 1 (Irreversible): Restructuring your entire team from a centralized model to a federated one. This impacts careers, budgets, and reporting lines. This requires months of consultation, planning, and careful execution because 'undoing' it is incredibly costly.",
     quiz: {
       question: "Your team is choosing between two similar project‑tracking apps. According to Jeff Bezos’s framework, this is a:",
       options: [
@@ -273,7 +273,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "What I Know, What I Wonder, What I Learned.",
     category: "Decision Making",
     concept: "KWL structures your inquiry to combat confirmation bias. It forces you to articulate what you already believe (Know) and what you genuinely want to learn (Wonder) before you gather evidence. The 'Learned' column reconciles assumptions with reality.",
-    reality: "Evaluating an AI search engine. K: Current search sucks, vendor claims 99% accuracy. W: How does it handle our jargon? What's the real accuracy? L: 95% accurate for top queries, but needs a synonym glossary for jargon.",
+    reality: "Evaluating a new AI-powered search engine for the company.\n\nK (Know): Current search is slow; the vendor claims 99% accuracy.\nW (Wonder): How does it handle our specific industry jargon? What is the real-world accuracy for our most common queries?\nL (Learned): It's 95% accurate for top queries, but we discovered it needs a custom synonym glossary to handle our internal project names effectively.",
     quiz: {
       question: "You are evaluating a new AI tool. The “W” in KWL stands for:",
       options: [
@@ -292,7 +292,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "A one-page user manual for working with you.",
     category: "Communication",
     concept: "A Personal README is a radical act of transparency. It pre-negotiates a working relationship by providing a set of instructions to help colleagues interact with you most effectively. It reduces friction, sets expectations, and builds psychological safety.",
-    reality: "Includes: Communication preferences ('Slack for quick questions'), Work Style ('I batch meetings on Tuesdays'), Feedback ('I value direct, kind feedback'), and Pet Peeves ('Messages that just say Hi and wait for a reply').",
+    reality: "A Personal README might include:\n\n- Communication: 'I prefer Slack for quick questions and Email for deep-dive topics.'\n- Work Style: 'I batch all my 1:1 meetings on Tuesdays to protect my deep-work time on Wednesdays.'\n- Feedback: 'I value direct, kind feedback. Please don't sugarcoat problems.'\n- Pet Peeves: 'Messages that just say \"Hi\" and wait for a reply before stating the purpose.'",
     quiz: {
       question: "A Personal README is primarily intended to:",
       options: [
@@ -311,7 +311,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Put the ask first, context second.",
     category: "Communication",
     concept: "The FLIP It structure mirrors an executive's information processing. They want the ask first. Only after they know what's required can they decide how much context to consume. It respects time and cognitive load.",
-    reality: "Action: Please approve the €15k budget for training by Friday. Context: The training will upskill 20 team members on the new tool, projected to reduce errors by 30%. Details: Vendor discount expires Friday.",
+    reality: "Action: 'Please approve the €15k budget for the advanced AI training by this Friday.'\n\nContext: This training will upskill 20 senior team members on our new LLM framework, which is projected to reduce manual data entry errors by 30%.\n\nDetails: The vendor's early-bird discount expires this Friday, saving us €3k if we act now.",
     quiz: {
       question: "Which email opening best follows the FLIP structure?",
       options: [
@@ -330,7 +330,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Condense updates to one page for executives.",
     category: "Communication",
     concept: "The constraint of one page forces ruthless prioritization. It’s a test: if you can’t explain it on one page, you don’t understand it well enough. It is not a summary; it is the artifact of your strategic thinking.",
-    reality: "Structure: The Situation (1 sentence), The Complication (1 sentence), The Question (1 sentence), The Answer (1 paragraph), Key Supporting Points (3-5 bullets), Risks & Mitigations (1-2 bullets).",
+    reality: "A One-Pager for a project proposal might look like:\n\n- The Situation: Our current onboarding process takes 4 weeks.\n- The Complication: 20% of new hires quit within the first 90 days due to confusion.\n- The Question: How can we reduce time-to-productivity to 1 week?\n- The Answer: Implement a 'Buddy System' and a centralized 'Knowledge Hub'.\n- Key Supporting Points: Benchmarking shows 40% higher retention with buddies.\n- Risks: Manager buy-in for buddy time. Mitigation: Buddies get a small bonus.",
     quiz: {
       question: "A one‑pager for executives should include all of the following EXCEPT:",
       options: [
@@ -349,7 +349,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "52 weekly summaries = your annual review, pre-written.",
     category: "Communication",
     concept: "This is a self-documentation tool. By saving every update, you build a granular, time-stamped log of your work. Your annual performance review becomes a simple act of curation. It also provides a shield of transparency.",
-    reality: "Structure: This Week's Wins (Link to work), Next Week's Focus, Blockers/Help Needed (Most important), Learnings/Metrics. No one can accuse you of not working when your contributions are documented.",
+    reality: "A Weekly Update structure that builds your career narrative:\n\n- This Week's Wins: Completed the migration of 500 legacy documents (Link to report).\n- Next Week's Focus: Finalizing the user training manual.\n- Blockers: Waiting on IT for API access to the new search tool.\n- Learnings: Users prefer video tutorials over long text articles.\n\nBy the end of the year, you have 52 pre-written summaries for your performance review.",
     quiz: {
       question: "Saving weekly updates is valuable because:",
       options: [
@@ -368,7 +368,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Align your work to the skip-level person’s goals.",
     category: "Communication",
     concept: "A skip-level (your manager's manager) is interested in how your work contributes to their strategic goals. The goal is to align your narrative with their priorities. Frame your work in terms of business outcomes.",
-    reality: "Bad: 'I added 50 new articles to the KB.' Good: 'My work to streamline the KB is on track to cut search time by 50%, freeing up 100 hours of selling capacity per quarter. What other friction points should I tackle?'",
+    reality: "Bad Approach: 'I added 50 new articles to the Knowledge Base this month.'\n\nGood Approach: 'My work to streamline the Knowledge Base is on track to cut average search time by 50% for the support team. This frees up roughly 100 hours of capacity per quarter. Given this success, what other high-friction points should I tackle next?'\n\nThis frames your output in terms of business value, not just activity.",
     quiz: {
       question: "In a skip‑level meeting, you should focus on:",
       options: [
@@ -387,7 +387,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Categorise meeting contributions by value.",
     category: "Communication",
     concept: "A framework for managing meeting dynamics. Blue (nodders/supportive), Green (drivers/constructive), Red (drains/critical). By categorizing contributions, you can manage the energy in a room and redirect dysfunctional behavior.",
-    reality: "To a Red: 'It sounds like you see a big problem. What would need to change for you to support this? Can you propose an alternative?' This forces them to turn criticism into a constructive proposal.",
+    reality: "Handling a Red Speaker in a meeting:\n\nRed: 'This new portal will never work. It's too complex.'\nFacilitator: 'It sounds like you see a significant risk. What specific complexity would need to be removed for you to support this? Can you propose a simpler alternative by tomorrow?'\n\nThis forces the Red speaker to shift from destructive criticism to constructive problem-solving.",
     quiz: {
       question: "In a meeting, a participant repeatedly says “This won’t work” without offering alternatives. They are a:",
       options: [
@@ -406,7 +406,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Ask them to explain it back to confirm understanding.",
     category: "Communication",
     concept: "A check for understanding that puts the burden on the explainer. It exposes the 'illusion of explanatory depth,' where we think we've explained something well, but the listener hasn't grasped it.",
-    reality: "Instead of 'Do you understand?', ask: 'Walk me through the steps you'd take when you get a product update notification tomorrow. Where do you go first?' Their struggle reveals exactly where the explanation is broken.",
+    reality: "Instead of asking 'Do you understand?', which often gets a reflexive 'Yes', try:\n\n'To make sure I've explained this clearly, could you walk me through the steps you'd take when you get a product update notification tomorrow? Where do you go first and what do you check?'\n\nTheir struggle or ease in explaining reveals exactly where your communication was effective or where it failed.",
     quiz: {
       question: "Instead of “Do you understand?”, a teach‑back question would be:",
       options: [
@@ -425,7 +425,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Make work visible, narrate it, frame it as contribution.",
     category: "Communication",
     concept: "WOL is the practice of making your work visible and narrating your process. It shifts your mindset from 'doing work' to 'contributing to a network.' It turns your work from a black box into a source of collaboration and feedback.",
-    reality: "Before WOL: You spend a week perfecting a dashboard in isolation. After WOL: Day 1: 'I'm starting on a dashboard. Who uses this data? What's the most important metric?' You get immediate input and build buy-in.",
+    reality: "Before WOL: You spend a week perfecting a complex dashboard in isolation, only to find out on launch day that the team actually needed different metrics.\n\nAfter WOL: Day 1: 'I'm starting on the new dashboard. Here's a rough sketch of the 3 metrics I'm planning to track. Does this align with what you need for the Q3 report?' \n\nYou get immediate course-correction and build buy-in before investing significant effort.",
     quiz: {
       question: "Starting a project by posting a rough wireframe and asking for input is an example of:",
       options: [
@@ -444,7 +444,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "The one task that makes everything else easier or unnecessary.",
     category: "Personal Output",
     concept: "When everything feels urgent, nothing actually is. The ONE Thing forces extreme prioritization through a single Focusing Question: 'What is the ONE Thing I can do, such that by doing it, everything else will be easier or unnecessary?'",
-    reality: "Monday morning, 23 items on your to-do list. You ask the Focusing Question and realize finishing the team migration plan is the ONE Thing, because three other departments are blocked until it is done.",
+    reality: "It's Monday morning and you have 23 items on your to-do list. You feel overwhelmed.\n\nYou ask the Focusing Question: 'What is the ONE Thing I can do, such that by doing it, everything else will be easier or unnecessary?'\n\nYou realize that finishing the 'Team Migration Plan' is the ONE Thing, because three other departments are currently blocked until that plan is approved. Everything else can wait.",
     quiz: {
       question: "The focusing question “What is the ONE Thing I can do such that by doing it everything else will be easier or unnecessary?” helps you:",
       options: [
@@ -463,7 +463,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Schedule against energy, not just time.",
     category: "Personal Output",
     concept: "Not all hours are created equal. Your cognitive ability fluctuates throughout the day in predictable patterns (Peak, Trough, Rebound). Scheduling against energy is a bio-hack that yields higher quality output in less time.",
-    reality: "Lark (morning person): Peak 8-12 (Deep work/strategy). Trough 1-3 (Admin/email). Rebound 3-5 (Creative/1:1s). Owl: Do not schedule deep work at 9am; use mornings for low-cognitive load tasks.",
+    reality: "Lark (Morning Person): \n- Peak 8am-12pm: Deep work, strategy, complex coding.\n- Trough 1pm-3pm: Admin, email, filing expenses.\n- Rebound 3pm-5pm: Creative brainstorming, 1:1 meetings.\n\nOwl (Night Person): \n- Do not schedule your most difficult task at 9am. Use your morning 'trough' for low-cognitive load tasks and save your 'peak' for later in the day.",
     quiz: {
       question: "If your energy peaks at 9‑11 AM and slumps after lunch, you should:",
       options: [
@@ -482,7 +482,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Work expands to fill the time available for its completion.",
     category: "Personal Output",
     concept: "A task with a generous deadline will expand in complexity and duration to fill it. Setting shorter, more aggressive (yet realistic) deadlines forces ruthless prioritization and eliminates scope creep.",
-    reality: "A one-hour meeting to 'discuss the project' will fill the hour. By shortening it to 25 minutes, you force an agenda: 'What's the status? What's the blocker? What's the next action?' The necessary work gets done.",
+    reality: "A one-hour meeting scheduled to 'discuss the project' will almost always fill the full hour with circular talk.\n\nBy intentionally shortening the meeting to 25 minutes, you force a tight agenda: 'What is the current status? What is the single biggest blocker? What is the next immediate action?' The same amount of *useful* work gets done in half the time.",
     quiz: {
       question: "To counteract Parkinson’s Law, you might:",
       options: [
@@ -520,7 +520,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Don't let small tasks pile up into a crisis.",
     category: "Personal Output",
     concept: "A companion to the Two-Minute Rule. It visualizes deferred tasks as small boxes that eventually collapse and create a crisis. The cost of 'doing it later' almost always exceeds the cost of 'doing it now.'",
-    reality: "A colleague asks for one piece of info. You say 'I'll get back to you.' Now you have an open loop. If you forget, you look unreliable. The 90 seconds it would have taken to reply immediately was far cheaper.",
+    reality: "A colleague asks for a simple piece of information. You say 'I'll get back to you.' \n\nNow you have an 'open loop' in your brain. If you forget, you look unreliable. If you remember later, you have to switch contexts again to find the info. The 90 seconds it would have taken to reply immediately was far 'cheaper' than the cumulative cost of deferring it.",
     quiz: {
       question: "A 5‑minute task that is repeatedly deferred eventually causes a crisis. This illustrates:",
       options: [
@@ -539,7 +539,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Operate with high agency and autonomy.",
     category: "Personal Output",
     concept: "A 'Fire and Forget' employee is someone you can give a mission to, not a set of instructions. They absorb the objective, define the plan, execute, and communicate outcomes without needing hand-holding.",
-    reality: "Manager: 'Why is traffic low on the portal?' High Agency: 'I'll pull traffic data, survey 50 people, and interview 5 new hires. I'll have a report with 3 recommendations by Friday.'",
+    reality: "Manager: 'Why is traffic low on the new portal?'\n\nLow Agency: 'I don't know, I'll look into it.' (Requires follow-up).\n\nHigh Agency: 'I've already pulled the traffic data for the last 30 days. I'm going to survey 50 users and interview 5 new hires to find the friction points. I'll have a report with 3 concrete recommendations on your desk by Friday.'",
     quiz: {
       question: "When given a mission, a high‑agency “fire and forget” employee would:",
       options: [
@@ -558,7 +558,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Set proactive boundaries with negative commitments.",
     category: "Personal Output",
     concept: "A 'not-to-do' list is a proactive boundary. It’s a set of explicit commitments to not engage in behaviors that are unproductive or a drain on energy. Positive intentions are weak; negative commitments (rules) are strong.",
-    reality: "Rules: 'I will not check Slack before 10 AM.' 'I will not attend any meeting without an agenda.' 'I will not say yes to a new request without saying no to something else.'",
+    reality: "Your 'Not-To-Do' Rules:\n\n1. 'I will not check Slack or Email before 10 AM to protect my deep-work time.'\n2. 'I will not attend any meeting that does not have a clear, written agenda.'\n3. 'I will not say \"yes\" to a new project request without explicitly identifying which current project I will stop or delay.'",
     quiz: {
       question: "A “don’t‑do” commitment is generally more effective than a positive intention because:",
       options: [
@@ -577,7 +577,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Simplify the process before you scale it.",
     category: "Personal Output",
     concept: "Automation scales a process. If the process is broken, automation scales the brokenness. The first step is always to map the current workflow, identify waste, and simplify before you consider a tool.",
-    reality: "Without Mapping: Buy a tool that formalizes a 6-person review step (3-week cycle). With Mapping: Remove redundant reviews and non-value-adding steps. Automate the remaining 3 steps (3-day cycle).",
+    reality: "Without Mapping: You buy a complex automation tool that formalizes a broken 6-person review step, resulting in a 3-week cycle that is now 'automated' but still slow.\n\nWith Mapping: You map the process, realize 3 of the reviews add no value, and remove them. You then automate the remaining 3 steps, resulting in a 3-day cycle. You simplified the process before scaling it with technology.",
     quiz: {
       question: "Before buying automation tools, you should first:",
       options: [
@@ -596,7 +596,7 @@ export const FRAMEWORKS: Framework[] = [
     summary: "Pursue perfection through daily, incremental improvements.",
     category: "Continuous Improvement",
     concept: "Kaizen means 'change for good.' It's the pursuit of perfection through small, daily, low-cost changes made by the people doing the work. Compounded over time, these lead to transformative results. It's a mindset, not a project.",
-    reality: "Instead of a 6-month intranet redesign, spend 30 minutes every Friday. Week 1: Fix 5 broken links. Week 2: Rename confusing titles. Week 3: Create a 'start here' page. After a year, the intranet is unrecognizable.",
+    reality: "Instead of a massive, risky 6-month intranet redesign, you commit to 30 minutes of Kaizen every Friday.\n\nWeek 1: Fix 5 broken links on the homepage.\nWeek 2: Rename 10 confusing document titles.\nWeek 3: Create a simple 'Start Here' guide for new users.\n\nAfter a year of these tiny, incremental improvements, the intranet is significantly more useful than any 'big bang' redesign could have achieved.",
     quiz: {
       question: "Kaizen emphasizes improvement through:",
       options: [

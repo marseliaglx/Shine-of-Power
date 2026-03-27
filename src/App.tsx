@@ -118,16 +118,19 @@ export default function App() {
   const [quizResult, setQuizResult] = useState<'correct' | 'incorrect' | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [isProphecyRevealed, setIsProphecyRevealed] = useState(false);
 
   // Initialize daily quest
   useEffect(() => {
     const randomQuest = FRAMEWORKS[Math.floor(Math.random() * FRAMEWORKS.length)];
     setDailyQuest(randomQuest);
+    setIsProphecyRevealed(false);
   }, []);
 
   const getNewQuest = useCallback(() => {
     const randomQuest = FRAMEWORKS[Math.floor(Math.random() * FRAMEWORKS.length)];
     setDailyQuest(randomQuest);
+    setIsProphecyRevealed(false);
     setView('home');
     window.scrollTo(0, 0);
   }, []);
@@ -358,36 +361,146 @@ export default function App() {
                 </motion.h1>
 
                 <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  className="grid md:grid-cols-3 gap-8 mb-16 text-left max-w-5xl mx-auto"
+                >
+                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
+                    <div className="flex items-center gap-3">
+                      <Target className="w-4 h-4 text-mystic" />
+                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Methodologies</h3>
+                    </div>
+                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                      Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
+                    <div className="flex items-center gap-3">
+                      <Zap className="w-4 h-4 text-mystic" />
+                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Problem Solving</h3>
+                    </div>
+                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                      Acquire mental models and frameworks that allow you to dissect complex challenges and find the most efficient path to victory.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
+                    <div className="flex items-center gap-3">
+                      <Compass className="w-4 h-4 text-mystic" />
+                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Strategic Wisdom</h3>
+                    </div>
+                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                      Gather tips, hints, and arcane shortcuts used by high-agency individuals to navigate corporate labyrinths and creative wildernesses.
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="arcane-card p-10 md:p-16 max-w-2xl mx-auto mb-12 relative group"
+                  className="arcane-card p-10 md:p-16 max-w-2xl mx-auto mb-12 relative group overflow-hidden"
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-mystic/30" />
-                  <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-mystic/30" />
+                  <div className="absolute top-0 right-0 p-8 opacity-5">
+                    <Wand2 className="w-32 h-32 text-mystic" />
+                  </div>
                   
-                  <span className="text-micro text-mystic/60 mb-6 block font-sans">Wisdom of the Day</span>
-                  <h2 className="text-4xl md:text-5xl mb-6 font-display uppercase tracking-wider">{dailyQuest.title}</h2>
-                  <p className="text-sm opacity-60 leading-relaxed uppercase tracking-[0.2em] mb-10 font-sans">
-                    {dailyQuest.summary}
-                  </p>
-                  
-                  <div className="flex items-center justify-center gap-6 mb-10">
-                    <div className="flex items-center gap-2 text-micro opacity-40">
-                      <Hourglass className="w-3 h-3" /> 4 MIN TRIAL
+                  <div className="flex items-center gap-4 mb-10 relative z-10">
+                    <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/5 shadow-[0_0_15px_rgba(255,45,149,0.2)]">
+                      <Flame className="w-6 h-6 text-mystic animate-pulse" />
                     </div>
-                    <div className="w-1 h-1 bg-white/20 rounded-full" />
-                    <div className="flex items-center gap-2 text-micro text-mystic">
-                      <Star className="w-3 h-3" /> {dailyQuest.xp} XP
+                    <div className="flex flex-col">
+                      <span className="text-micro text-mystic font-bold uppercase tracking-[0.4em]">The Altar of Enlightenment</span>
+                      <span className="text-[10px] opacity-40 uppercase tracking-widest">A Divine Revelation Awaits Your Presence</span>
                     </div>
                   </div>
 
-                  <button 
-                    onClick={() => handleStartQuest(dailyQuest)}
-                    className="btn-arcane w-full py-6 text-[12px]"
-                  >
-                    Accept the Quest
-                  </button>
+                  <AnimatePresence mode="wait">
+                    {!isProphecyRevealed ? (
+                      <motion.div 
+                        key="veiled"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
+                        className="space-y-8 relative z-10 py-10 text-center"
+                      >
+                        <div className="flex flex-col items-center gap-4">
+                          <div className="w-20 h-20 rounded-full border border-dashed border-mystic/40 flex items-center justify-center animate-spin-slow">
+                            <Skull className="w-8 h-8 text-mystic/40" />
+                          </div>
+                          <h2 className="text-3xl font-display uppercase tracking-[0.3em] text-white/40">A Veiled Omen</h2>
+                        </div>
+                        <p className="text-sm opacity-40 leading-relaxed uppercase tracking-widest max-w-md mx-auto">
+                          The altar hums with forbidden energy. A prophecy concerning <span className="text-mystic font-bold">{dailyQuest?.category}</span> has manifested, but its true form remains hidden from the uninitiated.
+                        </p>
+                        <button 
+                          onClick={() => setIsProphecyRevealed(true)}
+                          className="btn-arcane px-12 py-5 text-[11px] flex items-center justify-center gap-3 mx-auto group"
+                        >
+                          <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                          Reveal the Prophecy
+                        </button>
+                      </motion.div>
+                    ) : (
+                      <motion.div 
+                        key="revealed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="space-y-12"
+                      >
+                        <div className="space-y-6 relative z-10">
+                          <div className="flex items-center gap-2 mb-2">
+                             <Scroll className="w-3 h-3 opacity-30" />
+                             <span className="text-[9px] opacity-30 uppercase tracking-[0.2em] font-bold">Current Prophecy</span>
+                          </div>
+                          <h2 className="text-4xl md:text-5xl font-display uppercase tracking-wider leading-tight text-glow-mystic">
+                            {dailyQuest?.title}
+                          </h2>
+                          <div className="p-6 bg-mystic/5 border-l-2 border-mystic/30 italic">
+                             <p className="text-sm opacity-70 leading-relaxed font-sans">
+                               "{dailyQuest?.summary}"
+                             </p>
+                          </div>
+                        </div>
+
+                        <div className="mb-10 relative z-10">
+                           <div className="flex items-center gap-3 mb-4">
+                              <Sparkles className="w-4 h-4 text-mystic" />
+                              <span className="text-micro opacity-60 uppercase tracking-widest font-bold">Arcane Insights to be Mastered</span>
+                           </div>
+                           <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                               By accepting this quest, you shall delve into the forbidden arts of <span className="text-white font-bold">{dailyQuest?.category}</span>. 
+                               You will master <span className="text-mystic font-bold">methodologies, systems, and frameworks</span> designed to sharpen your <span className="text-white font-bold">problem-solving</span> and <span className="text-white font-bold">project management</span> prowess.
+                           </p>
+                        </div>
+                        
+                        <div className="grid grid-cols-2 gap-6 mb-12 p-6 bg-white/5 border border-white/10 rounded-sm relative z-10">
+                          <div className="flex flex-col gap-2">
+                            <span className="text-[9px] opacity-40 uppercase tracking-widest font-bold">Communion Time</span>
+                            <div className="flex items-center gap-2 text-micro">
+                              <Hourglass className="w-3 h-3 text-mystic" /> 4 MINUTE STUDY
+                            </div>
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <span className="text-[9px] opacity-40 uppercase tracking-widest font-bold">Wisdom Reward</span>
+                            <div className="flex items-center gap-2 text-micro text-mystic">
+                              <Star className="w-3 h-3" /> {dailyQuest?.xp} ARCANE XP
+                            </div>
+                          </div>
+                        </div>
+
+                        <button 
+                          onClick={() => dailyQuest && handleStartQuest(dailyQuest)}
+                          className="btn-arcane w-full py-6 text-[12px] flex items-center justify-center gap-3 group relative z-10"
+                        >
+                          <Sword className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                          Commune with the Altar & Begin Quest
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
 
                 <motion.div 
@@ -410,6 +523,42 @@ export default function App() {
                     >
                       <BookOpen className="w-4 h-4" /> The Archive
                     </button>
+                  </div>
+                </motion.div>
+
+                {/* Curriculum Section */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 text-left"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-mystic">
+                      <Target className="w-5 h-5" />
+                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Methodologies</h3>
+                    </div>
+                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                      Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-mystic">
+                      <Zap className="w-5 h-5" />
+                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Problem Solving</h3>
+                    </div>
+                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                      Acquire mental models and frameworks that allow you to dissect complex challenges and find the most efficient path to victory.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-mystic">
+                      <Compass className="w-5 h-5" />
+                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Strategic Wisdom</h3>
+                    </div>
+                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                      Gather tips, hints, and arcane shortcuts used by high-agency individuals to navigate corporate labyrinths and creative wildernesses.
+                    </p>
                   </div>
                 </motion.div>
               </div>
