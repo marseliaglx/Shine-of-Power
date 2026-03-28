@@ -88,11 +88,11 @@ function QuestCard({ quest, idx, isCompleted, onClick }: QuestCardProps) {
         </div>
         
         <h3 className="text-2xl font-display mb-4 group-hover:text-mystic transition-colors uppercase tracking-wider">{quest.title}</h3>
-        <p className="text-[11px] opacity-40 mb-10 leading-relaxed uppercase tracking-widest line-clamp-2 font-sans">{quest.summary}</p>
+        <p className="text-xs opacity-60 mb-10 leading-relaxed uppercase tracking-widest line-clamp-2 font-sans">{quest.summary}</p>
         
         <div className="flex items-center justify-between pt-6 border-t border-white/5">
           <div className="flex flex-col">
-            <span className="text-micro opacity-30 font-sans mb-1">{quest.category}</span>
+            <span className="text-micro opacity-50 font-sans mb-1">{quest.category}</span>
             <div className="flex items-center gap-2">
               <span className="font-mono text-[10px] text-mystic font-bold">{quest.xp} XP</span>
               <Zap className="w-4 h-4 text-mystic" />
@@ -369,9 +369,9 @@ export default function App() {
                   <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
                     <div className="flex items-center gap-3">
                       <Target className="w-4 h-4 text-mystic" />
-                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Methodologies</h3>
+                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Methodologies</h3>
                     </div>
-                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
                       Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
                     </p>
                   </div>
@@ -379,9 +379,9 @@ export default function App() {
                   <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
                     <div className="flex items-center gap-3">
                       <Zap className="w-4 h-4 text-mystic" />
-                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Problem Solving</h3>
+                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Problem Solving</h3>
                     </div>
-                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
                       Acquire mental models and frameworks that allow you to dissect complex challenges and find the most efficient path to victory.
                     </p>
                   </div>
@@ -389,9 +389,9 @@ export default function App() {
                   <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
                     <div className="flex items-center gap-3">
                       <Compass className="w-4 h-4 text-mystic" />
-                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Strategic Wisdom</h3>
+                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Strategic Wisdom</h3>
                     </div>
-                    <p className="text-[10px] opacity-40 leading-relaxed uppercase tracking-wider group-hover:opacity-60 transition-opacity">
+                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
                       Gather tips, hints, and arcane shortcuts used by high-agency individuals to navigate corporate labyrinths and creative wildernesses.
                     </p>
                   </div>
@@ -412,8 +412,8 @@ export default function App() {
                       <Flame className="w-6 h-6 text-mystic animate-pulse" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-micro text-mystic font-bold uppercase tracking-[0.4em]">The Altar of Enlightenment</span>
-                      <span className="text-[10px] opacity-40 uppercase tracking-widest">A Divine Revelation Awaits Your Presence</span>
+                      <span className="text-sm text-mystic font-bold uppercase tracking-[0.2em]">The Altar of Enlightenment</span>
+                      <span className="text-xs opacity-60 uppercase tracking-widest">A Divine Revelation Awaits Your Presence</span>
                     </div>
                   </div>
 
@@ -432,7 +432,7 @@ export default function App() {
                           </div>
                           <h2 className="text-3xl font-display uppercase tracking-[0.3em] text-white/40">A Veiled Omen</h2>
                         </div>
-                        <p className="text-sm opacity-40 leading-relaxed uppercase tracking-widest max-w-md mx-auto">
+                        <p className="text-base opacity-60 leading-relaxed uppercase tracking-widest max-w-md mx-auto">
                           The altar hums with forbidden energy. A prophecy concerning <span className="text-mystic font-bold">{dailyQuest?.category}</span> has manifested, but its true form remains hidden from the uninitiated.
                         </p>
                         <button 
@@ -470,7 +470,7 @@ export default function App() {
                               <Sparkles className="w-4 h-4 text-mystic" />
                               <span className="text-micro opacity-60 uppercase tracking-widest font-bold">Arcane Insights to be Mastered</span>
                            </div>
-                           <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                           <p className="text-xs opacity-60 leading-relaxed uppercase tracking-widest">
                                By accepting this quest, you shall delve into the forbidden arts of <span className="text-white font-bold">{dailyQuest?.category}</span>. 
                                You will master <span className="text-mystic font-bold">methodologies, systems, and frameworks</span> designed to sharpen your <span className="text-white font-bold">problem-solving</span> and <span className="text-white font-bold">project management</span> prowess.
                            </p>
@@ -538,7 +538,7 @@ export default function App() {
                       <Target className="w-5 h-5" />
                       <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Methodologies</h3>
                     </div>
-                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
+                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-widest">
                       Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
                     </p>
                   </div>
@@ -679,7 +679,7 @@ export default function App() {
                         <h4 className="text-micro text-mystic flex items-center gap-2 font-sans uppercase tracking-[0.3em] font-bold">
                           <BookOpen className="w-4 h-4" /> The Sacred Knowledge
                         </h4>
-                        <span className="text-[10px] opacity-40 uppercase tracking-widest font-bold">Phase 1: Deep Study</span>
+                        <span className="text-xs opacity-60 uppercase tracking-widest font-bold">Phase 1: Deep Study</span>
                       </div>
                       <div className="flex items-center gap-3 bg-mystic/10 px-4 py-2 rounded-full border border-mystic/20">
                         <div className="w-2 h-2 rounded-full bg-mystic animate-pulse" />
@@ -806,8 +806,8 @@ export default function App() {
                       
                       <div className="flex items-center justify-between mb-10 relative z-10">
                         <div className="flex flex-col gap-2">
-                          <h5 className="text-micro opacity-30 uppercase tracking-[0.2em] font-bold">Trial Requirements</h5>
-                          <span className="text-[10px] bg-mystic/10 text-mystic px-3 py-1 rounded-full font-bold uppercase tracking-widest">Step 2: Prove Mastery</span>
+                          <h5 className="text-micro opacity-50 uppercase tracking-[0.2em] font-bold">Trial Requirements</h5>
+                          <span className="text-xs bg-mystic/10 text-mystic px-3 py-1 rounded-full font-bold uppercase tracking-widest">Step 2: Prove Mastery</span>
                         </div>
                         <div className="w-10 h-10 rounded-full border border-mystic/20 flex items-center justify-center bg-void/50">
                           <Sword className="w-4 h-4 text-mystic" />
@@ -834,11 +834,11 @@ export default function App() {
 
                       <div className="space-y-6 mb-10 relative z-10">
                         <div className="flex items-center justify-between py-4 border-b border-white/5">
-                          <span className="text-micro opacity-40">Wisdom Reward</span>
+                          <span className="text-micro opacity-60">Wisdom Reward</span>
                           <span className="text-lg font-bold text-mystic font-mono">+{selectedQuest.xp} XP</span>
                         </div>
                         <div className="flex items-center justify-between py-4 border-b border-white/5">
-                          <span className="text-micro opacity-40">Arcane Difficulty</span>
+                          <span className="text-micro opacity-60">Arcane Difficulty</span>
                           <div className="flex gap-1.5">
                             {[1,2,3,4,5].map(i => (
                             <div key={i} className={`w-5 h-1.5 ${i <= 3 ? 'bg-mystic shadow-[0_0_10px_rgba(255,45,149,0.5)]' : 'bg-white/10'}`} />
@@ -848,7 +848,7 @@ export default function App() {
                       </div>
 
                       <div className="mb-8 p-6 bg-mystic/5 border border-mystic/10 rounded-sm relative z-10">
-                        <p className="text-[11px] opacity-60 leading-relaxed font-sans uppercase tracking-widest">
+                        <p className="text-xs opacity-70 leading-relaxed font-sans uppercase tracking-widest">
                           The trial will <span className="text-mystic font-bold">test your understanding</span> of this wisdom. Complete it successfully to <span className="text-white font-bold">earn your XP</span> and unlock the final transcription (PDF).
                         </p>
                       </div>
