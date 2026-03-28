@@ -627,7 +627,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="max-w-6xl mx-auto px-6 py-24"
+              className="max-w-7xl mx-auto px-6 py-24"
             >
               {/* Progress Indicator */}
               <div className="flex justify-center mb-20">
@@ -671,7 +671,7 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                <div className="lg:col-span-7 space-y-24">
+                <div className="lg:col-span-8 space-y-24">
                   <div className="arcane-card p-12 md:p-16 relative overflow-hidden group">
                     <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
                     <div className="flex items-center justify-between mb-12 relative z-10">
@@ -699,93 +699,56 @@ export default function App() {
                       <div className="absolute top-0 right-0 p-4 opacity-10">
                         <Sparkles className="w-12 h-12 text-mystic" />
                       </div>
-                      <p className="text-sm opacity-60 uppercase tracking-widest leading-loose max-w-2xl">
+                      <p className="text-lg opacity-70 uppercase tracking-widest leading-loose max-w-3xl">
                         Absorb this arcane wisdom. This concept is the foundation of your mastery. Once internalized, proceed to the <span className="text-mystic font-bold">Knowledge Quiz</span> to prove your understanding.
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="aspect-[4/5] arcane-card overflow-hidden group flex items-center justify-center relative bg-void/50">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(168,85,247,0.15)_0%,transparent_50%)]" />
-                      <motion.div
-                        animate={{ 
-                          rotate: [0, 360],
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{ 
-                          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                          scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                        }}
-                        className="relative z-10"
-                      >
-                        <Wand2 className="w-24 h-24 text-mystic opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="absolute inset-0 blur-2xl bg-mystic/20 rounded-full animate-pulse" />
-                        
-                        {/* Orbiting Sparkles */}
-                        {[...Array(4)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            animate={{ 
-                              rotate: [i * 90, i * 90 + 360],
-                            }}
-                            transition={{ 
-                              duration: 5 + i, 
-                              repeat: Infinity, 
-                              ease: "linear" 
-                            }}
-                            className="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2"
-                          >
-                            <Sparkles className="w-3 h-3 text-mystic absolute top-0 left-1/2 -translate-x-1/2" />
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="h-px w-full bg-mystic/20 mb-2" />
-                        <span className="text-[10px] font-mono text-mystic/40 uppercase tracking-widest">Arcane Relic Detected</span>
-                      </div>
-                    </div>
-                    <div className="arcane-card p-10 flex flex-col justify-center relative overflow-hidden bg-mystic/5 border-mystic/20">
-                      <div className="absolute top-0 right-0 p-6 opacity-5">
-                        <Scroll className="w-32 h-32 text-mystic" />
+                  <div className="space-y-12">
+                    <div className="arcane-card p-12 md:p-16 relative overflow-hidden bg-mystic/5 border-mystic/20">
+                      <div className="absolute top-0 right-0 p-8 opacity-5">
+                        <Scroll className="w-48 h-48 text-mystic" />
                       </div>
                       
-                      <div className="flex items-center justify-between mb-10 relative z-10">
-                        <div className="flex flex-col gap-2">
-                          <h4 className="text-micro text-mystic flex items-center gap-2 font-sans uppercase tracking-[0.2em] font-bold">
-                            <Scroll className="w-4 h-4" /> Manifestation in Reality
+                      <div className="flex items-center justify-between mb-12 relative z-10">
+                        <div className="flex flex-col gap-3">
+                          <h4 className="text-xs text-mystic flex items-center gap-2 font-sans uppercase tracking-[0.3em] font-bold">
+                            <Scroll className="w-5 h-5" /> Manifestation in Reality
                           </h4>
-                          <span className="text-[10px] opacity-50 uppercase tracking-widest font-bold">Bridging Theory & Reality</span>
+                          <span className="text-micro opacity-50 uppercase tracking-widest font-bold">Bridging Theory & Reality</span>
                         </div>
-                        <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-                          <Zap className="w-5 h-5 text-mystic" />
+                        <div className="w-14 h-14 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+                          <Zap className="w-6 h-6 text-mystic" />
                         </div>
                       </div>
                       
-                      <div className="space-y-8 relative z-10">
-                        <div className="flex gap-6">
-                          <div className="flex flex-col items-center gap-3">
-                            <div className="w-2 h-2 rounded-full bg-mystic/40" />
-                            <div className="w-px h-full bg-gradient-to-b from-mystic/40 to-transparent" />
+                      <div className="space-y-16 relative z-10">
+                        <div className="flex gap-8">
+                          <div className="flex flex-col items-center gap-4">
+                            <div className="w-3 h-3 rounded-full bg-mystic/60 shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
+                            <div className="w-px h-full bg-gradient-to-b from-mystic/60 to-transparent" />
                           </div>
-                          <div className="pb-4">
-                            <span className="text-[9px] uppercase tracking-widest font-bold text-mystic/60 mb-3 block">The Core Wisdom</span>
-                            <p className="text-sm opacity-60 leading-relaxed font-serif italic">“{selectedQuest.summary}”</p>
+                          <div className="pb-6">
+                            <span className="text-xs uppercase tracking-[0.3em] font-bold text-mystic mb-6 block">The Core Wisdom</span>
+                            <p className="text-3xl md:text-4xl opacity-90 leading-relaxed font-serif italic">“{selectedQuest.summary}”</p>
                           </div>
                         </div>
                         
-                        <div className="flex gap-6">
+                        <div className="flex gap-8">
                           <div className="flex flex-col items-center">
-                            <div className="w-8 h-8 rounded-full border border-mystic flex items-center justify-center text-[12px] text-mystic font-bold shadow-[0_0_10px_rgba(168,85,247,0.3)]">
-                              <ChevronRight className="w-4 h-4" />
+                            <div className="w-12 h-12 rounded-full border-2 border-mystic flex items-center justify-center text-mystic font-bold shadow-[0_0_15px_rgba(168,85,247,0.4)] bg-mystic/5">
+                              <ChevronRight className="w-6 h-6" />
                             </div>
                           </div>
-                          <div className="flex-1 bg-void/40 p-8 rounded-sm border border-white/5 relative group">
-                            <div className="absolute top-0 left-0 w-1 h-full bg-mystic/40" />
-                            <span className="text-[9px] uppercase tracking-widest font-bold text-mystic mb-4 block">Real-World Application</span>
-                            <div className="text-xl leading-relaxed text-white/90 font-serif">
+                          <div className="flex-1 bg-void/60 p-10 md:p-14 rounded-sm border border-white/10 relative group">
+                            <div className="absolute top-0 left-0 w-1.5 h-full bg-mystic/60" />
+                            <div className="absolute -top-4 left-8 px-6 py-2 bg-mystic text-void text-xs font-bold uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                              Real-World Application
+                            </div>
+                            <div className="text-2xl md:text-3xl leading-relaxed text-white font-serif">
                               {selectedQuest.reality.split('\n').map((para, i) => (
-                                <p key={i} className="mb-4 last:mb-0">
+                                <p key={i} className="mb-6 last:mb-0">
                                   {para}
                                 </p>
                               ))}
@@ -797,7 +760,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-5">
+                <div className="lg:col-span-4">
                   <div className="sticky top-28 space-y-8">
                     <div className="arcane-card p-10 grid-visible relative overflow-hidden">
                       <div className="absolute top-0 right-0 p-4 opacity-5">
