@@ -1220,7 +1220,10 @@ export default function App() {
               <button onClick={openArchive} className="hover:opacity-100 transition-opacity">Archive</button>
               <a href="#" className="hover:opacity-100 transition-opacity">Manifesto</a>
             </div>
-            <p className="text-micro opacity-20 tracking-[0.4em]">© MMXXVI The Digital Curator</p>
+            <div className="text-center md:text-right space-y-3">
+              <p className="text-micro opacity-20 tracking-[0.4em]">© MMXXVI The Digital Curator</p>
+              <p className="text-micro opacity-30 tracking-[0.2em] uppercase">Created by Marcela Gleixner for fun!</p>
+            </div>
           </div>
         </div>
       </footer>
