@@ -173,7 +173,7 @@ export default function App() {
       // Magical confetti
       const duration = 3 * 1000;
       const animationEnd = Date.now() + duration;
-      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, colors: ['#FF2D95', '#7C3AED', '#D946EF'] };
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, colors: ['#A855F7', '#7C3AED', '#D946EF'] };
 
       const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
 
@@ -209,11 +209,11 @@ export default function App() {
     doc.setFillColor(15, 1, 20);
     doc.rect(0, 0, 210, 297, 'F');
     
-    doc.setTextColor(255, 45, 149);
+    doc.setTextColor(168, 85, 247);
     doc.setFontSize(26);
     doc.text(quest.title.toUpperCase(), 105, 30, { align: 'center' });
     
-    doc.setDrawColor(255, 45, 149);
+    doc.setDrawColor(168, 85, 247);
     doc.setLineWidth(0.5);
     doc.line(40, 35, 170, 35);
     
@@ -222,7 +222,7 @@ export default function App() {
     doc.text(`CATEGORY: ${quest.category.toUpperCase()}`, 105, 45, { align: 'center' });
     doc.text(`XP REWARD: ${quest.xp}`, 105, 52, { align: 'center' });
     
-    doc.setTextColor(255, 45, 149);
+    doc.setTextColor(168, 85, 247);
     doc.setFontSize(18);
     doc.text("THE ARCANE CONCEPT", 20, 75);
     
@@ -231,7 +231,7 @@ export default function App() {
     const conceptLines = doc.splitTextToSize(quest.concept, 170);
     doc.text(conceptLines, 20, 85);
     
-    doc.setTextColor(255, 45, 149);
+    doc.setTextColor(168, 85, 247);
     doc.setFontSize(18);
     doc.text("MANIFESTATION IN REALITY", 20, 130);
     
@@ -240,7 +240,7 @@ export default function App() {
     const realityLines = doc.splitTextToSize(quest.reality, 170);
     doc.text(realityLines, 20, 140);
     
-    doc.setTextColor(255, 45, 149);
+    doc.setTextColor(168, 85, 247);
     doc.setFontSize(16);
     doc.text("THE ULTIMATE WISDOM", 105, 200, { align: 'center' });
     
@@ -277,7 +277,7 @@ export default function App() {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => setView('home')}
           >
-            <div className="w-10 h-10 bg-mystic rounded-sm flex items-center justify-center group-hover:rotate-12 transition-transform shadow-[0_0_20px_rgba(255,45,149,0.3)]">
+            <div className="w-10 h-10 bg-mystic rounded-sm flex items-center justify-center group-hover:rotate-12 transition-transform shadow-[0_0_20px_rgba(168,85,247,0.3)]">
               <Wand2 className="text-void w-6 h-6" />
             </div>
             <span className="text-xl font-display text-mystic tracking-widest uppercase">Shrine of <span className="font-black">Power</span></span>
@@ -408,7 +408,7 @@ export default function App() {
                   </div>
                   
                   <div className="flex items-center gap-4 mb-10 relative z-10">
-                    <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/5 shadow-[0_0_15px_rgba(255,45,149,0.2)]">
+                    <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/5 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                       <Flame className="w-6 h-6 text-mystic animate-pulse" />
                     </div>
                     <div className="flex flex-col">
@@ -633,7 +633,7 @@ export default function App() {
               <div className="flex justify-center mb-20">
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(255,45,149,0.5)]">1</div>
+                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(168,85,247,0.5)]">1</div>
                     <span className="text-[9px] uppercase tracking-widest font-bold text-mystic">Study</span>
                   </div>
                   <div className="w-16 h-px bg-white/10" />
@@ -673,7 +673,7 @@ export default function App() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div className="lg:col-span-7 space-y-24">
                   <div className="arcane-card p-12 md:p-16 relative overflow-hidden group">
-                    <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(255,45,149,0.5)]" />
+                    <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
                     <div className="flex items-center justify-between mb-12 relative z-10">
                       <div className="flex flex-col gap-2">
                         <h4 className="text-micro text-mystic flex items-center gap-2 font-sans uppercase tracking-[0.3em] font-bold">
@@ -707,7 +707,7 @@ export default function App() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="aspect-[4/5] arcane-card overflow-hidden group flex items-center justify-center relative bg-void/50">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(255,45,149,0.15)_0%,transparent_50%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(168,85,247,0.15)_0%,transparent_50%)]" />
                       <motion.div
                         animate={{ 
                           rotate: [0, 360],
@@ -757,7 +757,7 @@ export default function App() {
                           </h4>
                           <span className="text-[10px] opacity-50 uppercase tracking-widest font-bold">Bridging Theory & Reality</span>
                         </div>
-                        <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_15px_rgba(255,45,149,0.2)]">
+                        <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                           <Zap className="w-5 h-5 text-mystic" />
                         </div>
                       </div>
@@ -776,7 +776,7 @@ export default function App() {
                         
                         <div className="flex gap-6">
                           <div className="flex flex-col items-center">
-                            <div className="w-8 h-8 rounded-full border border-mystic flex items-center justify-center text-[12px] text-mystic font-bold shadow-[0_0_10px_rgba(255,45,149,0.3)]">
+                            <div className="w-8 h-8 rounded-full border border-mystic flex items-center justify-center text-[12px] text-mystic font-bold shadow-[0_0_10px_rgba(168,85,247,0.3)]">
                               <ChevronRight className="w-4 h-4" />
                             </div>
                           </div>
@@ -822,7 +822,7 @@ export default function App() {
                         </div>
                         <div className="flex-1 h-px bg-gradient-to-r from-mystic/40 to-white/10 mx-2" />
                         <div className="flex flex-col items-center gap-2">
-                          <div className="w-8 h-8 rounded-full border-2 border-mystic flex items-center justify-center text-[10px] text-mystic font-bold shadow-[0_0_10px_rgba(255,45,149,0.3)] bg-mystic/5">2</div>
+                          <div className="w-8 h-8 rounded-full border-2 border-mystic flex items-center justify-center text-[10px] text-mystic font-bold shadow-[0_0_10px_rgba(168,85,247,0.3)] bg-mystic/5">2</div>
                           <span className="text-[8px] uppercase tracking-widest text-mystic font-bold">Quiz</span>
                         </div>
                         <div className="flex-1 h-px bg-white/10 mx-2" />
@@ -841,7 +841,7 @@ export default function App() {
                           <span className="text-micro opacity-60">Arcane Difficulty</span>
                           <div className="flex gap-1.5">
                             {[1,2,3,4,5].map(i => (
-                            <div key={i} className={`w-5 h-1.5 ${i <= 3 ? 'bg-mystic shadow-[0_0_10px_rgba(255,45,149,0.5)]' : 'bg-white/10'}`} />
+                            <div key={i} className={`w-5 h-1.5 ${i <= 3 ? 'bg-mystic shadow-[0_0_10px_rgba(168,85,247,0.5)]' : 'bg-white/10'}`} />
                             ))}
                           </div>
                         </div>
@@ -907,7 +907,7 @@ export default function App() {
                   </div>
                   <div className="w-16 h-px bg-mystic/30" />
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(255,45,149,0.5)]">2</div>
+                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(168,85,247,0.5)]">2</div>
                     <span className="text-[9px] uppercase tracking-widest font-bold text-mystic">Trial</span>
                   </div>
                   <div className="w-16 h-px bg-white/10" />
@@ -939,7 +939,7 @@ export default function App() {
                       className={`w-full text-left p-8 border transition-all duration-300 flex items-center justify-between group ${
                         quizAnswer === idx
                           ? quizResult === 'correct'
-                          ? 'bg-mystic/10 border-mystic text-mystic shadow-[0_0_20px_rgba(255,45,149,0.1)]'
+                          ? 'bg-mystic/10 border-mystic text-mystic shadow-[0_0_20px_rgba(168,85,247,0.1)]'
                             : 'bg-red-500/10 border-red-500 text-red-400'
                           : 'bg-white/5 border-white/10 hover:border-mystic/40 hover:bg-white/[0.08]'
                       }`}
@@ -997,7 +997,7 @@ export default function App() {
                   </div>
                   <div className="w-16 h-px bg-mystic/30" />
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(255,45,149,0.5)]">3</div>
+                    <div className="w-10 h-10 rounded-full bg-mystic flex items-center justify-center text-void font-bold shadow-[0_0_20px_rgba(168,85,247,0.5)]">3</div>
                     <span className="text-[9px] uppercase tracking-widest font-bold text-mystic">Mastery</span>
                   </div>
                 </div>
@@ -1084,7 +1084,7 @@ export default function App() {
                   ease: "backOut",
                   scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="w-32 h-32 bg-mystic rounded-sm flex items-center justify-center mx-auto mb-16 shadow-[0_0_80px_rgba(255,45,149,0.5)] relative z-10"
+                className="w-32 h-32 bg-mystic rounded-sm flex items-center justify-center mx-auto mb-16 shadow-[0_0_80px_rgba(168,85,247,0.5)] relative z-10"
               >
                 <div className="absolute inset-0 animate-pulse bg-mystic/20 blur-2xl rounded-full" />
                 <Crown className="text-void w-14 h-14 relative z-10" />
@@ -1143,9 +1143,9 @@ export default function App() {
                           y: 0,
                           rotate: 0,
                           textShadow: [
-                            "0 0 20px rgba(255, 45, 149, 0.6)",
-                            "0 0 40px rgba(255, 45, 149, 0.9)",
-                            "0 0 20px rgba(255, 45, 149, 0.6)"
+                            "0 0 20px rgba(168, 85, 247, 0.6)",
+                            "0 0 40px rgba(168, 85, 247, 0.9)",
+                            "0 0 20px rgba(168, 85, 247, 0.6)"
                           ]
                         }}
                         transition={{ 
@@ -1209,7 +1209,7 @@ export default function App() {
                 transition={{ delay: 0.8 }}
                 className="arcane-card p-12 md:p-16 mb-20 text-left relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(255,45,149,0.5)]" />
+                <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
                 <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-20 transition-opacity">
                   <Quote className="w-20 h-20" />
                 </div>

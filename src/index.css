@@ -7,8 +7,8 @@
   --font-display: "Cinzel", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-mystic: #FF2D95; /* Magical Magenta/Pink */
-  --color-gold: #FF2D95; /* Keeping for compatibility but it's pink */
+  --color-mystic: #A855F7; /* Mystical Purple */
+  --color-gold: #A855F7; /* Keeping for compatibility */
   --color-arcane: #7C3AED; /* Deep Mystical Purple */
   --color-void: #06010A; /* Even darker void */
   --color-indigo-deep: #0F051A;
@@ -23,7 +23,7 @@
     background-image: 
       radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
       radial-gradient(circle at 0% 100%, rgba(217, 70, 239, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 100% 100%, rgba(255, 45, 149, 0.08) 0%, transparent 40%);
+      radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
     min-height: 100vh;
     position: relative;
   }
@@ -45,7 +45,7 @@
 
 @layer utilities {
   .text-glow-mystic {
-    text-shadow: 0 0 15px rgba(255, 45, 149, 0.5), 0 0 30px rgba(255, 45, 149, 0.2);
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.2);
   }
   
   .text-glow-arcane {
@@ -67,7 +67,7 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(90deg, transparent, rgba(217, 70, 239, 0.3), rgba(255, 45, 149, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(217, 70, 239, 0.3), rgba(168, 85, 247, 0.3), transparent);
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -93,12 +93,12 @@
     0%, 100% { 
       box-shadow: 
         inset 0 0 40px rgba(124, 58, 237, 0.1),
-        0 0 40px rgba(255, 45, 149, 0.1);
+        0 0 40px rgba(168, 85, 247, 0.1);
     }
     50% { 
       box-shadow: 
         inset 0 0 60px rgba(124, 58, 237, 0.2),
-        0 0 80px rgba(255, 45, 149, 0.2);
+        0 0 80px rgba(168, 85, 247, 0.2);
     }
   }
 
@@ -129,13 +129,13 @@
 
   .btn-arcane {
     @apply relative px-8 py-4 bg-transparent border border-mystic/40 text-mystic uppercase tracking-[0.25em] text-[10px] font-bold overflow-hidden transition-all duration-500;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(255, 45, 149, 0.1));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(168, 85, 247, 0.1));
   }
 
   .btn-arcane:hover {
     @apply border-mystic text-white;
     background: linear-gradient(135deg, var(--color-arcane), var(--color-mystic));
-    box-shadow: 0 0 40px rgba(255, 45, 149, 0.4);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
   }
 
   .text-micro {
