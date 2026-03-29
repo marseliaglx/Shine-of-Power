@@ -27,7 +27,8 @@ import {
   Compass, 
   RotateCcw, 
   Star,
-  ChevronLeft
+  ChevronLeft,
+  ChevronDown
 } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import confetti from 'canvas-confetti';
@@ -307,16 +308,17 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 overflow-hidden"
+              className="relative min-h-screen flex flex-col items-center px-6 overflow-hidden pb-32"
             >
               {/* Magical Background Elements */}
               <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-arcane/5 rounded-full blur-[120px]" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-mystic/5 rounded-full animate-[spin_60s_linear_infinite]" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-arcane/10 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
+                <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-arcane/5 rounded-full blur-[120px]" />
+                <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] border border-mystic/5 rounded-full animate-[spin_60s_linear_infinite]" />
+                <div className="absolute top-[60%] left-[10%] w-[400px] h-[400px] bg-mystic/5 rounded-full blur-[100px]" />
+                <div className="absolute top-[80%] right-[10%] w-[500px] h-[500px] bg-arcane/5 rounded-full blur-[120px]" />
                 
                 {/* Floating Particles */}
-                {[...Array(15)].map((_, i) => (
+                {[...Array(20)].map((_, i) => (
                   <motion.div
                     key={i}
                     initial={{ 
@@ -329,94 +331,109 @@ export default function App() {
                       opacity: [0, 0.5, 0]
                     }}
                     transition={{ 
-                      duration: 10 + Math.random() * 20, 
+                      duration: 15 + Math.random() * 25, 
                       repeat: Infinity,
                       delay: Math.random() * 10,
                       ease: "linear"
                     }}
-                    className="absolute w-1 h-1 bg-mystic rounded-full blur-[1px]"
+                    className="absolute w-1.5 h-1.5 bg-mystic rounded-full blur-[1px]"
                   />
                 ))}
               </div>
 
-              <div className="relative z-10 text-center max-w-4xl">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  className="mb-8 flex justify-center"
-                >
-                  <div className="p-4 bg-mystic/10 border border-mystic/20 rounded-full">
-                    <Flame className="w-8 h-8 text-mystic animate-pulse" />
-                  </div>
-                </motion.div>
-
+              {/* Step 1: The Entrance */}
+              <div className="relative z-10 text-center max-w-5xl pt-32 mb-48">
                 <motion.h1 
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  className="text-[8vw] md:text-[5vw] font-display leading-[1.1] mb-12 max-w-4xl mx-auto tracking-widest uppercase text-glow-mystic"
-                >
-                  AI is <span className="italic text-mystic text-glow-mystic">leveling up</span>, are you? <br />
-                  <span className="text-[4vw] md:text-[2.5vw] opacity-60">Take a quest to level up your human skills.</span>
-                </motion.h1>
-
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="grid md:grid-cols-3 gap-8 mb-16 text-left max-w-5xl mx-auto"
-                >
-                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
-                    <div className="flex items-center gap-3">
-                      <Target className="w-4 h-4 text-mystic" />
-                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Methodologies</h3>
-                    </div>
-                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
-                      Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-4 h-4 text-mystic" />
-                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Problem Solving</h3>
-                    </div>
-                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
-                      Acquire mental models and frameworks that allow you to dissect complex challenges and find the most efficient path to victory.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 p-6 bg-white/5 border border-white/10 rounded-sm hover:border-mystic/30 transition-colors group">
-                    <div className="flex items-center gap-3">
-                      <Compass className="w-4 h-4 text-mystic" />
-                      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-white/90">Strategic Wisdom</h3>
-                    </div>
-                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-wider group-hover:opacity-80 transition-opacity">
-                      Gather tips, hints, and arcane shortcuts used by high-agency individuals to navigate corporate labyrinths and creative wildernesses.
-                    </p>
-                  </div>
-                </motion.div>
-
-                <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="arcane-card p-10 md:p-16 max-w-2xl mx-auto mb-12 relative group overflow-hidden"
+                  className="text-[8vw] md:text-[5vw] font-display leading-[1.1] mb-10 tracking-widest uppercase text-glow-mystic"
                 >
-                  <div className="absolute top-0 right-0 p-8 opacity-5">
-                    <Wand2 className="w-32 h-32 text-mystic" />
+                  Welcome to the <br /> <span className="text-white font-black">Shrine of Power</span>
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-xl md:text-3xl opacity-70 leading-relaxed uppercase tracking-[0.15em] font-sans max-w-3xl mx-auto mb-12"
+                >
+                  In an era where silicon minds evolve by the second, the true bottleneck is often the <span className="text-mystic font-bold">human element</span>. 
+                  This sanctuary offers bite-sized knowledge snippets delivered as arcane quests.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex justify-center gap-4 mb-24"
+                >
+                  <div className="h-px w-12 bg-mystic/30 self-center" />
+                  <span className="text-[10px] uppercase tracking-[0.5em] text-mystic font-bold">A Sanctuary of Insight</span>
+                  <div className="h-px w-12 bg-mystic/30 self-center" />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 2 }}
+                  className="mt-12 flex flex-col items-center gap-4"
+                >
+                  <motion.div 
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <ChevronDown className="w-6 h-6 text-mystic opacity-40" />
+                  </motion.div>
+                  <span className="text-[10px] uppercase tracking-[0.5em] opacity-30">Scroll to Reveal the Lore</span>
+                  <div className="w-px h-24 bg-gradient-to-b from-mystic/50 to-transparent" />
+                </motion.div>
+              </div>
+
+              {/* Step 2: The Grimoire's Origin */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="relative z-10 max-w-4xl mx-auto mb-64 text-center"
+              >
+                <div className="inline-block px-6 py-2 bg-mystic/10 border border-mystic/30 rounded-full mb-12">
+                  <span className="text-xs text-mystic font-bold uppercase tracking-[0.3em]">The Grimoire's Origin</span>
+                </div>
+                
+                <div className="arcane-card p-12 bg-mystic/5 border-mystic/10 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-mystic/30" />
+                  <div className="space-y-8">
+                    <p className="text-lg md:text-2xl opacity-70 leading-relaxed uppercase tracking-[0.15em] font-sans max-w-3xl mx-auto">
+                      Behold this digital ledger, a compilation of corporate arcana harvested from the minds of senior mages, ancient LinkedIn scrolls, and random shards of productivity lore found in the wild.
+                    </p>
+                    <p className="text-lg md:text-2xl opacity-70 leading-relaxed uppercase tracking-[0.15em] font-sans max-w-3xl mx-auto">
+                      These are not grand philosophies of a lifetime, but rather <span className="text-mystic italic">"useful bits"</span>—the tactical cantrips of the modern workspace. Too often, these fragments of wisdom vanish into the ether of forgotten screenshots or are buried beneath the relentless tide of social feeds.
+                    </p>
+                    <p className="text-xl md:text-3xl font-display uppercase tracking-widest text-white mt-12">
+                      I have bound them here, within this shrine, so their power may be invoked by those who seek to master the human element.
+                    </p>
                   </div>
                   
-                  <div className="flex items-center gap-4 mb-10 relative z-10">
-                    <div className="w-12 h-12 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/5 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-                      <Flame className="w-6 h-6 text-mystic animate-pulse" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm text-mystic font-bold uppercase tracking-[0.2em]">The Altar of Enlightenment</span>
-                      <span className="text-xs opacity-60 uppercase tracking-widest">A Divine Revelation Awaits Your Presence</span>
-                    </div>
+                  <div className="mt-16 flex items-center justify-center gap-4">
+                    <div className="h-px w-16 bg-mystic/20" />
+                    <Scroll className="w-8 h-8 text-mystic/40" />
+                    <div className="h-px w-16 bg-mystic/20" />
                   </div>
+                </div>
+              </motion.div>
 
+              {/* Step 4: The Communion */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="relative z-10 w-full max-w-4xl mx-auto"
+              >
+                <div className="arcane-card p-10 md:p-20 relative group overflow-hidden bg-mystic/5 border-mystic/20">
+                  <div className="absolute top-0 right-0 p-12 opacity-5">
+                    <Wand2 className="w-64 h-64 text-mystic" />
+                  </div>
+                  
                   <AnimatePresence mode="wait">
                     {!isProphecyRevealed ? (
                       <motion.div 
@@ -424,144 +441,131 @@ export default function App() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
-                        className="space-y-8 relative z-10 py-10 text-center"
+                        className="space-y-12 relative z-10 py-10 text-center"
                       >
-                        <div className="flex flex-col items-center gap-4">
-                          <div className="w-20 h-20 rounded-full border border-dashed border-mystic/40 flex items-center justify-center animate-spin-slow">
-                            <Skull className="w-8 h-8 text-mystic/40" />
+                        <div className="flex flex-col items-center gap-8">
+                          <div className="w-32 h-32 rounded-full border-2 border-dashed border-mystic/40 flex items-center justify-center animate-spin-slow relative">
+                            <Skull className="w-12 h-12 text-mystic/40" />
+                            <div className="absolute inset-0 rounded-full bg-mystic/5 animate-pulse" />
                           </div>
-                          <h2 className="text-3xl font-display uppercase tracking-[0.3em] text-white/40">A Veiled Omen</h2>
+                          <h2 className="text-4xl md:text-5xl font-display uppercase tracking-[0.4em] text-white/40">A Veiled Omen</h2>
                         </div>
-                        <p className="text-base opacity-60 leading-relaxed uppercase tracking-widest max-w-md mx-auto">
+                        <p className="text-lg md:text-xl opacity-60 leading-relaxed uppercase tracking-widest max-w-xl mx-auto font-sans">
                           The altar hums with forbidden energy. A prophecy concerning <span className="text-mystic font-bold">{dailyQuest?.category}</span> has manifested, but its true form remains hidden from the uninitiated.
                         </p>
-                        <button 
+                        <motion.button 
                           onClick={() => setIsProphecyRevealed(true)}
-                          className="btn-arcane px-12 py-5 text-[11px] flex items-center justify-center gap-3 mx-auto group"
+                          animate={{ 
+                            scale: [1, 1.03, 1],
+                            boxShadow: [
+                              "0 0 30px rgba(168,85,247,0.3)",
+                              "0 0 50px rgba(168,85,247,0.6)",
+                              "0 0 30px rgba(168,85,247,0.3)"
+                            ]
+                          }}
+                          transition={{ 
+                            duration: 2, 
+                            repeat: Infinity, 
+                            ease: "easeInOut" 
+                          }}
+                          className="btn-arcane px-20 py-8 text-base flex items-center justify-center gap-4 mx-auto group"
                         >
-                          <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                          Reveal the Prophecy
-                        </button>
+                          <Sparkles className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+                          Start the quest for knowledge
+                        </motion.button>
                       </motion.div>
                     ) : (
                       <motion.div 
                         key="revealed"
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="space-y-12"
+                        className="space-y-16"
                       >
-                        <div className="space-y-6 relative z-10">
-                          <div className="flex items-center gap-2 mb-2">
-                             <Scroll className="w-3 h-3 opacity-30" />
-                             <span className="text-[9px] opacity-30 uppercase tracking-[0.2em] font-bold">Current Prophecy</span>
+                        <div className="space-y-8 relative z-10">
+                          <div className="flex items-center gap-3 mb-4">
+                             <Scroll className="w-4 h-4 text-mystic" />
+                             <span className="text-xs text-mystic uppercase tracking-[0.3em] font-bold">Current Prophecy</span>
                           </div>
-                          <h2 className="text-4xl md:text-5xl font-display uppercase tracking-wider leading-tight text-glow-mystic">
+                          <h2 className="text-5xl md:text-7xl font-display uppercase tracking-wider leading-tight text-glow-mystic">
                             {dailyQuest?.title}
                           </h2>
-                          <div className="p-6 bg-mystic/5 border-l-2 border-mystic/30 italic">
-                             <p className="text-sm opacity-70 leading-relaxed font-sans">
+                          <div className="p-10 bg-mystic/10 border-l-4 border-mystic italic relative">
+                             <div className="absolute top-0 right-0 p-4 opacity-10">
+                               <Quote className="w-12 h-12 text-mystic" />
+                             </div>
+                             <p className="text-xl md:text-2xl opacity-90 leading-relaxed font-serif text-white">
                                "{dailyQuest?.summary}"
                              </p>
                           </div>
                         </div>
 
-                        <div className="mb-10 relative z-10">
-                           <div className="flex items-center gap-3 mb-4">
-                              <Sparkles className="w-4 h-4 text-mystic" />
-                              <span className="text-micro opacity-60 uppercase tracking-widest font-bold">Arcane Insights to be Mastered</span>
+                        <div className="relative z-10">
+                           <div className="flex items-center gap-3 mb-6">
+                              <Sparkles className="w-5 h-5 text-mystic" />
+                              <span className="text-xs opacity-60 uppercase tracking-widest font-bold">Arcane Insights to be Mastered</span>
                            </div>
-                           <p className="text-xs opacity-60 leading-relaxed uppercase tracking-widest">
+                           <p className="text-base md:text-lg opacity-60 leading-relaxed uppercase tracking-widest font-sans">
                                By accepting this quest, you shall delve into the forbidden arts of <span className="text-white font-bold">{dailyQuest?.category}</span>. 
                                You will master <span className="text-mystic font-bold">methodologies, systems, and frameworks</span> designed to sharpen your <span className="text-white font-bold">problem-solving</span> and <span className="text-white font-bold">project management</span> prowess.
                            </p>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-6 mb-12 p-6 bg-white/5 border border-white/10 rounded-sm relative z-10">
-                          <div className="flex flex-col gap-2">
-                            <span className="text-[9px] opacity-40 uppercase tracking-widest font-bold">Communion Time</span>
-                            <div className="flex items-center gap-2 text-micro">
-                              <Hourglass className="w-3 h-3 text-mystic" /> 4 MINUTE STUDY
+                        <div className="grid grid-cols-2 gap-8 p-10 bg-white/5 border border-white/10 rounded-sm relative z-10">
+                          <div className="flex flex-col gap-3">
+                            <span className="text-xs opacity-40 uppercase tracking-widest font-bold">Communion Time</span>
+                            <div className="flex items-center gap-3 text-sm font-bold text-white">
+                              <Hourglass className="w-4 h-4 text-mystic" /> 4 MINUTE STUDY
                             </div>
                           </div>
-                          <div className="flex flex-col gap-2">
-                            <span className="text-[9px] opacity-40 uppercase tracking-widest font-bold">Wisdom Reward</span>
-                            <div className="flex items-center gap-2 text-micro text-mystic">
-                              <Star className="w-3 h-3" /> {dailyQuest?.xp} ARCANE XP
+                          <div className="flex flex-col gap-3">
+                            <span className="text-xs opacity-40 uppercase tracking-widest font-bold">Wisdom Reward</span>
+                            <div className="flex items-center gap-3 text-sm font-bold text-mystic">
+                              <Star className="w-4 h-4" /> {dailyQuest?.xp} ARCANE XP
                             </div>
                           </div>
                         </div>
 
                         <button 
                           onClick={() => dailyQuest && handleStartQuest(dailyQuest)}
-                          className="btn-arcane w-full py-6 text-[12px] flex items-center justify-center gap-3 group relative z-10"
+                          className="btn-arcane w-full py-8 text-sm flex items-center justify-center gap-4 group relative z-10 shadow-[0_0_40px_rgba(168,85,247,0.4)]"
                         >
-                          <Sword className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                          <Sword className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                           Commune with the Altar & Begin Quest
                         </button>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </div>
 
                 <motion.div 
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="flex flex-col items-center gap-8"
+                  className="mt-24 flex flex-col items-center gap-12"
                 >
                   <button 
                     onClick={getNewQuest}
-                    className="flex items-center gap-2 text-micro opacity-40 hover:opacity-100 transition-opacity"
+                    className="flex items-center gap-3 text-xs opacity-40 hover:opacity-100 transition-opacity uppercase tracking-widest font-bold"
                   >
-                    <RotateCcw className="w-3 h-3" /> Scry for another quest
+                    <RotateCcw className="w-4 h-4" /> Scry for another quest
                   </button>
                   
-                  <div className="flex gap-6 mt-8">
-                    <button 
-                      onClick={openArchive}
-                      className="px-8 py-3 bg-white/5 border border-white/10 text-micro hover:bg-white/10 transition-colors flex items-center gap-2"
-                    >
-                      <BookOpen className="w-4 h-4" /> The Archive
-                    </button>
-                  </div>
-                </motion.div>
+                  <button 
+                    onClick={openArchive}
+                    className="px-12 py-4 bg-white/5 border border-white/10 text-xs uppercase tracking-widest font-bold hover:bg-white/10 transition-colors flex items-center gap-3"
+                  >
+                    <BookOpen className="w-5 h-5" /> Enter The Archive
+                  </button>
 
-                {/* Curriculum Section */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 text-left"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-mystic">
-                      <Target className="w-5 h-5" />
-                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Methodologies</h3>
-                    </div>
-                    <p className="text-xs opacity-60 leading-relaxed uppercase tracking-widest">
-                      Learn battle-tested systems for project management and execution. From Agile rituals to Lean manufacturing principles adapted for the modern mind.
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-mystic">
-                      <Zap className="w-5 h-5" />
-                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Problem Solving</h3>
-                    </div>
-                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
-                      Acquire mental models and frameworks that allow you to dissect complex challenges and find the most efficient path to victory.
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-mystic">
-                      <Compass className="w-5 h-5" />
-                      <h3 className="text-micro font-bold uppercase tracking-[0.2em]">Strategic Wisdom</h3>
-                    </div>
-                    <p className="text-[11px] opacity-40 leading-relaxed uppercase tracking-widest">
-                      Gather tips, hints, and arcane shortcuts used by high-agency individuals to navigate corporate labyrinths and creative wildernesses.
+                  <div className="mt-12 text-center max-w-sm mx-auto">
+                    <div className="h-px w-12 bg-mystic/20 mx-auto mb-8" />
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-mystic font-black leading-relaxed text-glow-mystic">
+                      AI is leveling up, <br /> are you? <br /><br />
+                      <span className="opacity-60 font-medium">Master the human skills that AI cannot replicate.</span>
                     </p>
                   </div>
                 </motion.div>
-              </div>
+              </motion.div>
             </motion.section>
           )}
 
@@ -668,9 +672,7 @@ export default function App() {
                 <p className="text-xl md:text-2xl opacity-60 max-w-3xl leading-relaxed uppercase tracking-[0.15em] font-sans">
                   {selectedQuest.summary}
                 </p>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+              </div>              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
                 <div className="lg:col-span-8 space-y-24">
                   <div className="arcane-card p-12 md:p-16 relative overflow-hidden group">
                     <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
@@ -702,60 +704,6 @@ export default function App() {
                       <p className="text-lg opacity-70 uppercase tracking-widest leading-loose max-w-3xl">
                         Absorb this arcane wisdom. This concept is the foundation of your mastery. Once internalized, proceed to the <span className="text-mystic font-bold">Knowledge Quiz</span> to prove your understanding.
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-12">
-                    <div className="arcane-card p-12 md:p-16 relative overflow-hidden bg-mystic/5 border-mystic/20">
-                      <div className="absolute top-0 right-0 p-8 opacity-5">
-                        <Scroll className="w-48 h-48 text-mystic" />
-                      </div>
-                      
-                      <div className="flex items-center justify-between mb-12 relative z-10">
-                        <div className="flex flex-col gap-3">
-                          <h4 className="text-xs text-mystic flex items-center gap-2 font-sans uppercase tracking-[0.3em] font-bold">
-                            <Scroll className="w-5 h-5" /> Manifestation in Reality
-                          </h4>
-                          <span className="text-micro opacity-50 uppercase tracking-widest font-bold">Bridging Theory & Reality</span>
-                        </div>
-                        <div className="w-14 h-14 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-                          <Zap className="w-6 h-6 text-mystic" />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-16 relative z-10">
-                        <div className="flex gap-8">
-                          <div className="flex flex-col items-center gap-4">
-                            <div className="w-3 h-3 rounded-full bg-mystic/60 shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
-                            <div className="w-px h-full bg-gradient-to-b from-mystic/60 to-transparent" />
-                          </div>
-                          <div className="pb-6">
-                            <span className="text-xs uppercase tracking-[0.3em] font-bold text-mystic mb-6 block">The Core Wisdom</span>
-                            <p className="text-3xl md:text-4xl opacity-90 leading-relaxed font-serif italic">“{selectedQuest.summary}”</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex gap-8">
-                          <div className="flex flex-col items-center">
-                            <div className="w-12 h-12 rounded-full border-2 border-mystic flex items-center justify-center text-mystic font-bold shadow-[0_0_15px_rgba(168,85,247,0.4)] bg-mystic/5">
-                              <ChevronRight className="w-6 h-6" />
-                            </div>
-                          </div>
-                          <div className="flex-1 bg-void/60 p-10 md:p-14 rounded-sm border border-white/10 relative group">
-                            <div className="absolute top-0 left-0 w-1.5 h-full bg-mystic/60" />
-                            <div className="absolute -top-4 left-8 px-6 py-2 bg-mystic text-void text-xs font-bold uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-                              Real-World Application
-                            </div>
-                            <div className="text-2xl md:text-3xl leading-relaxed text-white font-serif">
-                              {selectedQuest.reality.split('\n').map((para, i) => (
-                                <p key={i} className="mb-6 last:mb-0">
-                                  {para}
-                                </p>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -791,54 +739,170 @@ export default function App() {
                         <div className="flex-1 h-px bg-white/10 mx-2" />
                         <div className="flex flex-col items-center gap-2">
                           <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[10px] opacity-30 font-bold">3</div>
-                          <span className="text-[8px] uppercase tracking-widest opacity-20 font-bold">Mastery</span>
+                          <span className="text-[8px] uppercase tracking-widest opacity-30 font-bold">XP</span>
                         </div>
                       </div>
 
-                      <div className="space-y-6 mb-10 relative z-10">
-                        <div className="flex items-center justify-between py-4 border-b border-white/5">
-                          <span className="text-micro opacity-60">Wisdom Reward</span>
-                          <span className="text-lg font-bold text-mystic font-mono">+{selectedQuest.xp} XP</span>
+                      <div className="space-y-6 relative z-10">
+                        <div className="flex items-center justify-between text-micro opacity-60">
+                          <span>Difficulty</span>
+                          <span className="text-mystic font-bold">{selectedQuest.difficulty}</span>
                         </div>
-                        <div className="flex items-center justify-between py-4 border-b border-white/5">
-                          <span className="text-micro opacity-60">Arcane Difficulty</span>
-                          <div className="flex gap-1.5">
-                            {[1,2,3,4,5].map(i => (
-                            <div key={i} className={`w-5 h-1.5 ${i <= 3 ? 'bg-mystic shadow-[0_0_10px_rgba(168,85,247,0.5)]' : 'bg-white/10'}`} />
-                            ))}
-                          </div>
+                        <div className="flex items-center justify-between text-micro opacity-60">
+                          <span>Reward</span>
+                          <span className="text-mystic font-bold">{selectedQuest.xp} XP</span>
+                        </div>
+                        <div className="flex items-center justify-between text-micro opacity-60">
+                          <span>Time</span>
+                          <span className="text-mystic font-bold">~4 MINS</span>
                         </div>
                       </div>
-
-                      <div className="mb-8 p-6 bg-mystic/5 border border-mystic/10 rounded-sm relative z-10">
-                        <p className="text-xs opacity-70 leading-relaxed font-sans uppercase tracking-widest">
-                          The trial will <span className="text-mystic font-bold">test your understanding</span> of this wisdom. Complete it successfully to <span className="text-white font-bold">earn your XP</span> and unlock the final transcription (PDF).
-                        </p>
-                      </div>
-
-                      <button 
-                        onClick={() => setView('quiz')}
-                        className="btn-arcane w-full py-6 flex items-center justify-center gap-3 group relative z-10"
-                      >
-                        <Sword className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                        Begin Knowledge Quiz & Earn XP
-                      </button>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-1 h-1 rounded-full bg-mystic/40" />
-                        <span className="text-[10px] opacity-40 uppercase tracking-widest font-bold">Final Step: Archive Wisdom</span>
-                      </div>
-                      <button 
-                        onClick={() => downloadPDF(selectedQuest)}
-                        className="w-full bg-white/5 border border-white/10 py-5 text-micro hover:bg-white/10 transition-colors flex items-center justify-center gap-3 group"
-                      >
-                        <Scroll className="w-4 h-4 group-hover:scale-110 transition-transform" /> Download Wisdom (PDF)
-                      </button>
-                      <p className="text-[10px] opacity-30 text-center uppercase tracking-widest font-sans leading-relaxed">
-                        Transcribe this scroll to your local archives as a permanent PDF document for future study.
+                    <div className="arcane-card p-8 bg-mystic/5 border-mystic/20">
+                      <h5 className="text-[10px] uppercase tracking-[0.3em] font-bold text-mystic mb-6">The Curator's Note</h5>
+                      <p className="text-xs opacity-50 leading-relaxed uppercase tracking-widest italic">
+                        "This wisdom was forged in the fires of real-world complexity. Do not merely read it—internalize it."
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Manifestation in Reality - Full Width Section */}
+              <div className="mb-24">
+                <div className="arcane-card p-12 md:p-20 relative overflow-hidden bg-mystic/5 border-mystic/20">
+                  <div className="absolute top-0 right-0 p-12 opacity-5">
+                    <Scroll className="w-64 h-64 text-mystic" />
+                  </div>
+                  
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 relative z-10 gap-8">
+                    <div className="flex flex-col gap-4">
+                      <h4 className="text-sm text-mystic flex items-center gap-3 font-sans uppercase tracking-[0.4em] font-bold">
+                        <Scroll className="w-6 h-6" /> Manifestation in Reality
+                      </h4>
+                      <span className="text-micro opacity-50 uppercase tracking-[0.2em] font-bold">Bridging Theory & Reality</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="h-px w-24 bg-mystic/20 hidden md:block" />
+                      <div className="w-16 h-16 rounded-full border border-mystic/30 flex items-center justify-center bg-mystic/10 shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+                        <Zap className="w-8 h-8 text-mystic" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+                    <div className="lg:col-span-4 space-y-12">
+                      <div className="flex gap-6">
+                        <div className="flex flex-col items-center gap-4">
+                          <div className="w-4 h-4 rounded-full bg-mystic shadow-[0_0_15px_rgba(168,85,247,0.6)]" />
+                          <div className="w-px h-full bg-gradient-to-b from-mystic to-transparent" />
+                        </div>
+                        <div>
+                          <span className="text-xs uppercase tracking-[0.3em] font-bold text-mystic mb-6 block">The Core Wisdom</span>
+                          <p className="text-3xl md:text-4xl opacity-90 leading-tight font-serif italic">“{selectedQuest.summary}”</p>
+                        </div>
+                      </div>
+                      
+                      <div className="p-8 bg-void/40 border border-white/5 rounded-sm">
+                        <p className="text-xs opacity-40 uppercase tracking-widest leading-relaxed">
+                          This is the distillation of the methodology. It is the single most important takeaway that you must carry into the field.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-8">
+                      <div className="bg-void/60 p-10 md:p-16 rounded-sm border border-white/10 relative group h-full">
+                        <div className="absolute top-0 left-0 w-2 h-full bg-mystic shadow-[0_0_20px_rgba(168,85,247,0.3)]" />
+                        <div className="absolute -top-5 left-10 px-8 py-3 bg-mystic text-void text-xs font-bold uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                          Real-World Application
+                        </div>
+                        <div className="text-2xl md:text-4xl leading-relaxed text-white font-serif">
+                          {selectedQuest.reality.split('\n').map((para, i) => (
+                            <p key={i} className="mb-8 last:mb-0">
+                              {para}
+                            </p>
+                          ))}
+                        </div>
+                        
+                        <div className="mt-16 pt-12 border-t border-white/5 flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-mystic/10 flex items-center justify-center">
+                              <Sparkles className="w-5 h-5 text-mystic" />
+                            </div>
+                            <span className="text-[10px] uppercase tracking-widest font-bold opacity-40">Practical Insight Manifested</span>
+                          </div>
+                          <ChevronRight className="w-6 h-6 text-mystic opacity-20 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Phase 2: The Trial */}
+              <div className="max-w-4xl mx-auto">
+                <div className="flex items-center gap-6 mb-16">
+                  <div className="w-14 h-14 rounded-full border-2 border-mystic flex items-center justify-center text-mystic font-bold text-xl shadow-[0_0_20px_rgba(168,85,247,0.4)] bg-mystic/5">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="text-2xl uppercase tracking-[0.3em] font-bold text-white">Phase 2: The Sacred Trial</h4>
+                    <p className="text-xs opacity-40 uppercase tracking-widest mt-2">Prove your mastery to claim the XP</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="arcane-card p-10 relative overflow-hidden border-mystic/20 bg-mystic/5">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-mystic" />
+                    <h5 className="text-xs uppercase tracking-[0.3em] font-bold text-mystic mb-10">Trial Preparation</h5>
+                    
+                    <div className="space-y-6 mb-10 relative z-10">
+                      <div className="flex items-center justify-between py-4 border-b border-white/5">
+                        <span className="text-micro opacity-60">Wisdom Reward</span>
+                        <span className="text-lg font-bold text-mystic font-mono">+{selectedQuest.xp} XP</span>
+                      </div>
+                      <div className="flex items-center justify-between py-4 border-b border-white/5">
+                        <span className="text-micro opacity-60">Arcane Difficulty</span>
+                        <div className="flex gap-1.5">
+                          {[1,2,3,4,5].map(i => (
+                            <div key={i} className={`w-5 h-1.5 ${i <= 3 ? 'bg-mystic shadow-[0_0_10px_rgba(168,85,247,0.5)]' : 'bg-white/10'}`} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mb-8 p-6 bg-mystic/5 border border-mystic/10 rounded-sm relative z-10">
+                      <p className="text-xs opacity-70 leading-relaxed font-sans uppercase tracking-widest">
+                        The trial will <span className="text-mystic font-bold">test your understanding</span> of this wisdom. Complete it successfully to <span className="text-white font-bold">earn your XP</span> and unlock the final transcription (PDF).
+                      </p>
+                    </div>
+
+                    <button 
+                      onClick={() => setView('quiz')}
+                      className="btn-arcane w-full py-6 flex items-center justify-center gap-3 group relative z-10"
+                    >
+                      <Sword className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                      Begin Knowledge Quiz & Earn XP
+                    </button>
+                  </div>
+
+                  <div className="space-y-8">
+                    <div className="arcane-card p-10 border-white/10 bg-white/5">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-1 h-1 rounded-full bg-mystic/40" />
+                          <span className="text-[10px] opacity-40 uppercase tracking-widest font-bold">Final Step: Archive Wisdom</span>
+                        </div>
+                        <button 
+                          onClick={() => downloadPDF(selectedQuest)}
+                          className="w-full bg-white/5 border border-white/10 py-5 text-micro hover:bg-white/10 transition-colors flex items-center justify-center gap-3 group"
+                        >
+                          <Scroll className="w-4 h-4 group-hover:scale-110 transition-transform" /> Download Wisdom (PDF)
+                        </button>
+                        <p className="text-[10px] opacity-30 text-center uppercase tracking-widest font-sans leading-relaxed">
+                          Transcribe this scroll to your local archives as a permanent PDF document for future study.
+                        </p>
+                      </div>
                     </div>
 
                     <div className="arcane-card p-8 flex items-center gap-6 bg-mystic/5 border-mystic/20">
@@ -1211,19 +1275,21 @@ export default function App() {
       <footer className="py-24 border-t border-white/5 mt-24 bg-void/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-            <div className="flex items-center gap-3">
-              <Wand2 className="w-6 h-6 text-gold" />
-              <span className="text-xl font-serif italic text-gold tracking-tight">Shrine of <span className="font-black not-italic">Power</span></span>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <Wand2 className="w-6 h-6 text-gold" />
+                <span className="text-xl font-serif italic text-gold tracking-tight">Shrine of <span className="font-black not-italic">Power</span></span>
+              </div>
+              <p className="text-[10px] opacity-30 uppercase tracking-widest font-sans text-center md:text-left">
+                Created and ideated by <span className="text-white font-bold">Marcela Gleixner</span> using <span className="text-mystic font-bold">Google AI</span>
+              </p>
             </div>
             <div className="flex gap-10 text-micro opacity-30">
               <button onClick={() => setView('home')} className="hover:opacity-100 transition-opacity">Shrine of Power</button>
               <button onClick={openArchive} className="hover:opacity-100 transition-opacity">Archive</button>
               <a href="#" className="hover:opacity-100 transition-opacity">Manifesto</a>
             </div>
-            <div className="text-center md:text-right space-y-3">
-              <p className="text-micro opacity-20 tracking-[0.4em]">© MMXXVI The Digital Curator</p>
-              <p className="text-micro opacity-30 tracking-[0.2em] uppercase">Created by Marcela Gleixner for fun!</p>
-            </div>
+            <p className="text-micro opacity-20 tracking-[0.4em]">© MMXXVI The Digital Curator</p>
           </div>
         </div>
       </footer>
