@@ -365,27 +365,11 @@ export default function App() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="flex justify-center gap-4 mb-24"
+                  className="flex justify-center gap-4"
                 >
                   <div className="h-px w-12 bg-mystic/30 self-center" />
                   <span className="text-[10px] uppercase tracking-[0.5em] text-mystic font-bold">A Sanctuary of Insight</span>
                   <div className="h-px w-12 bg-mystic/30 self-center" />
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 2 }}
-                  className="mt-12 flex flex-col items-center gap-4"
-                >
-                  <motion.div 
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <ChevronDown className="w-6 h-6 text-mystic opacity-40" />
-                  </motion.div>
-                  <span className="text-[10px] uppercase tracking-[0.5em] opacity-30">Scroll to Reveal the Lore</span>
-                  <div className="w-px h-24 bg-gradient-to-b from-mystic/50 to-transparent" />
                 </motion.div>
               </div>
 
@@ -404,13 +388,7 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-1 h-full bg-mystic/30" />
                   <div className="space-y-8">
                     <p className="text-lg md:text-2xl opacity-70 leading-relaxed uppercase tracking-[0.15em] font-sans max-w-3xl mx-auto">
-                      Behold this digital ledger, a compilation of corporate arcana harvested from the minds of senior mages, ancient LinkedIn scrolls, and random shards of productivity lore found in the wild.
-                    </p>
-                    <p className="text-lg md:text-2xl opacity-70 leading-relaxed uppercase tracking-[0.15em] font-sans max-w-3xl mx-auto">
-                      These are not grand philosophies of a lifetime, but rather <span className="text-mystic italic">"useful bits"</span>—the tactical cantrips of the modern workspace. Too often, these fragments of wisdom vanish into the ether of forgotten screenshots or are buried beneath the relentless tide of social feeds.
-                    </p>
-                    <p className="text-xl md:text-3xl font-display uppercase tracking-widest text-white mt-12">
-                      I have bound them here, within this shrine, so their power may be invoked by those who seek to master the human element.
+                      These are "useful bits" for the modern workspace, often lost to forgotten screenshots or buried in social feeds.
                     </p>
                   </div>
                   
@@ -420,6 +398,23 @@ export default function App() {
                     <div className="h-px w-16 bg-mystic/20" />
                   </div>
                 </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 2 }}
+                className="mb-48 flex flex-col items-center gap-6"
+              >
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <ChevronDown className="w-6 h-6 text-mystic opacity-60" />
+                </motion.div>
+                <span className="text-[11px] uppercase tracking-[0.4em] opacity-60 text-mystic/80 font-bold">Scroll to Reveal the Quest for Knowledge</span>
+                <div className="w-px h-32 bg-gradient-to-b from-mystic/60 to-transparent" />
               </motion.div>
 
               {/* Step 4: The Communion */}
